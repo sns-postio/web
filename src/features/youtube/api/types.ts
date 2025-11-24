@@ -38,3 +38,7 @@ export interface YoutubeVideoPostRequest {
   privacyStatus: "public" | "private";
   file: File;
 }
+
+export interface YoutubeRedirectInfo {
+  redirectUrl: string;
+}

@@ -3,19 +3,18 @@
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
-import { YOUTUBE_ENDPOINTS } from "../api/endpoint";
+import { requestYoutubeRedirectUrl } from "../api/connectionApi";
 
 export function useYoutubeConnect() {
   const t = useTranslations("youtube.messages");
-  const redirectEndpoint =
-    (process.env.NEXT_PUBLIC_API_BASE ?? "") + YOUTUBE_ENDPOINTS.AUTH_REDIRECT;
 
   return useMutation<string>({
     mutationFn: async () => {
-      if (!redirectEndpoint) {
-        throw new Error(t("redirectErrorDescription"));
+      const response = await requestYoutubeRedirectUrl();
+      if (!response.success || !response.data?.redirectUrl) {
+        throw new Error(response.message || t("redirectErrorDescription"));
       }
-      return redirectEndpoint;
+      return response.data.redirectUrl;
     },
     onSuccess: (redirectUrl) => {
       if (typeof window === "undefined") return;
