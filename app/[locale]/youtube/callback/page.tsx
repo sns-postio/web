@@ -1,3 +1,4 @@
+// app/[locale]/youtube/callback/page.tsx
 "use client";
 
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout";

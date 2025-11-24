@@ -22,8 +22,38 @@ export const fetchUserConnections = async (): Promise<ApiResponse<UserConnection
  * 유튜브 리다이렉트 URL 요청
  */
 export const requestYoutubeRedirectUrl = async (): Promise<ApiResponse<YoutubeRedirectInfo>> => {
-  const res = await api.get<ApiResponse<YoutubeRedirectInfo>>(YOUTUBE_ENDPOINTS.AUTH_REDIRECT);
-  return res.data;
+  try {
+    const res = await api.get<ApiResponse<YoutubeRedirectInfo>>(YOUTUBE_ENDPOINTS.AUTH_REDIRECT, {
+      maxRedirects: 0,
+      validateStatus: (status) => status === 200 || status === 302,
+    });
+
+    if (res.status === 302) {
+      const redirectUrl = res.headers.location;
+      if (!redirectUrl) throw new Error("Redirect URL not found");
+      return {
+        success: true,
+        data: { redirectUrl },
+        message: "Redirect URL retrieved",
+        code: "SUCCESS",
+      };
+    }
+
+    return res.data;
+  } catch (error: any) {
+    if (error.response?.status === 302) {
+      const redirectUrl = error.response.headers.location;
+      if (redirectUrl) {
+        return {
+          success: true,
+          data: { redirectUrl },
+          message: "Redirect URL retrieved",
+          code: "SUCCESS",
+        };
+      }
+    }
+    throw error;
+  }
 };
 
 /**
