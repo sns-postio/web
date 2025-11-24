@@ -159,6 +159,126 @@
     "tiktok": "TikTok",
     "youtube": "YouTube"
   },
+  "youtube": {
+    "messages": {
+      "redirectErrorTitle": "Unable to start YouTube connection",
+      "redirectErrorDescription": "Please try again in a moment.",
+      "disconnectSuccessTitle": "YouTube connection removed",
+      "disconnectSuccessDesc": "The selected channel has been disconnected.",
+      "disconnectErrorTitle": "Unable to disconnect channel",
+      "disconnectErrorDesc": "Please refresh and try again."
+    },
+    "connectPage": {
+      "title": "Connect your YouTube channel",
+      "description": "Link your channel to schedule posts and analyze performance inside Postio.",
+      "loading": "Checking your current connection status...",
+      "status": {
+        "connected": "YouTube channel connected",
+        "disconnected": "YouTube channel not connected"
+      },
+      "statusDetail": {
+        "connected": "Your existing posts and analytics are now synced.",
+        "disconnected": "Start the OAuth flow to post and track content directly from Postio."
+      },
+      "cta": {
+        "connect": "Connect YouTube",
+        "reconnect": "Reconnect",
+        "retry": "Retry",
+        "manageVideos": "Open video uploader"
+      },
+      "error": {
+        "title": "Unable to load connection status",
+        "description": "Refresh the page or try again later."
+      },
+      "guide": {
+        "title": "How the connection works",
+        "line1": "Request a secure redirect URL from Postio.",
+        "line2": "Grant the requested permissions on Google's consent screen.",
+        "line3": "Return to Postio once the server stores the access token."
+      },
+      "posts": {
+        "title": "Recent YouTube posts",
+        "description": "Review your uploaded videos and open them directly on YouTube.",
+        "selectLabel": "Channel",
+        "empty": "No videos found for this channel.",
+        "errorTitle": "Unable to load posts",
+        "errorDescription": "Refresh the page or try again.",
+        "loading": "Loading posts...",
+        "retry": "Retry",
+        "columns": {
+          "title": "Title",
+          "publishedAt": "Published",
+          "privacy": "Privacy",
+          "stats": "Stats",
+          "link": "Link"
+        },
+        "stats": {
+          "views": "Views",
+          "likes": "Likes"
+        },
+        "linkLabel": "Open",
+        "pagination": {
+          "page": "Page {current} of {total}",
+          "prev": "Previous",
+          "next": "Next"
+        }
+      },
+      "disconnect": {
+        "title": "Disconnect channel",
+        "description": "Remove a linked YouTube channel from Postio.",
+        "selectLabel": "Choose the channel you want to remove",
+        "button": "Disconnect"
+      }
+    },
+    "callbackPage": {
+      "title": "YouTube authorization",
+      "successTitle": "Your channel is now linked",
+      "successDescription": "You can close this page or continue managing YouTube within Postio.",
+      "errorTitle": "Unable to finish the connection",
+      "errorDescription": "We couldn't connect your channel. Please try again.",
+      "backButton": "Back to YouTube settings",
+      "retryButton": "Try connecting again",
+      "messageLabel": "Message"
+    },
+    "uploadPage": {
+      "title": "Upload a YouTube video",
+      "description": "Send a video directly to YouTube without leaving Postio.",
+      "submit": "Publish to YouTube",
+      "fields": {
+        "connection": "Linked channel",
+        "privacy": "Privacy",
+        "title": "Title",
+        "description": "Description",
+        "file": "Video file"
+      },
+      "placeholders": {
+        "title": "Video title",
+        "description": "Describe your video"
+      },
+      "privacy": {
+        "public": "Public",
+        "private": "Private"
+      },
+      "upload": {
+        "placeholder": "Choose a video file",
+        "helper": "Supported formats from your device"
+      },
+      "errors": {
+        "noConnection": "Please choose a channel to publish to.",
+        "noFile": "Attach the video file.",
+        "noTitle": "Enter the video title."
+      },
+      "noConnection": {
+        "title": "Connect a channel first",
+        "description": "You need to link a YouTube channel before uploading videos.",
+        "button": "Open connection page"
+      },
+      "uploadSuccessTitle": "Video upload started",
+      "uploadSuccessDesc": "We are sending your video to YouTube.",
+      "uploadErrorTitle": "Upload failed",
+      "uploadError": "Please check the form and try again."
+    }
+  },
   "deploy": {
     "title": "Deploy",
     "description": "Manage and deploy your posts",

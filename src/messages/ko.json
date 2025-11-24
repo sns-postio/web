@@ -159,6 +159,126 @@
     "tiktok": "TikTok",
     "youtube": "YouTube"
   },
+  "youtube": {
+    "messages": {
+      "redirectErrorTitle": "YouTube 연동을 시작할 수 없어요",
+      "redirectErrorDescription": "잠시 후 다시 시도해 주세요.",
+      "disconnectSuccessTitle": "YouTube 연동이 해제되었습니다",
+      "disconnectSuccessDesc": "선택한 채널 연동을 끊었어요.",
+      "disconnectErrorTitle": "채널을 해제하지 못했어요",
+      "disconnectErrorDesc": "새로고침 후 다시 시도해 주세요."
+    },
+    "connectPage": {
+      "title": "YouTube 채널 연동",
+      "description": "채널을 연결해 예약 발행과 성과 분석을 진행하세요.",
+      "loading": "현재 연동 상태를 확인하는 중입니다...",
+      "status": {
+        "connected": "YouTube 채널이 연동되었습니다",
+        "disconnected": "연동된 YouTube 채널이 없습니다"
+      },
+      "statusDetail": {
+        "connected": "스케줄러와 분석이 이 채널 기준으로 동기화됩니다.",
+        "disconnected": "OAuth 절차를 시작하면 Postio에서 바로 발행하고 모니터링할 수 있습니다."
+      },
+      "cta": {
+        "connect": "YouTube 연동하기",
+        "reconnect": "다시 연동",
+        "retry": "다시 시도",
+        "manageVideos": "영상 업로드 화면"
+      },
+      "error": {
+        "title": "연동 상태를 불러오지 못했어요",
+        "description": "새로고침 후 다시 시도해 주세요."
+      },
+      "guide": {
+        "title": "연동 절차",
+        "line1": "Postio에서 안전한 리다이렉트 URL을 발급합니다.",
+        "line2": "Google 동의 화면에서 필요한 권한을 허용합니다.",
+        "line3": "서버에 토큰 저장이 완료되면 다시 Postio로 돌아옵니다."
+      },
+      "posts": {
+        "title": "최근 YouTube 게시물",
+        "description": "업로드된 영상을 확인하고 바로 YouTube에서 열어보세요.",
+        "selectLabel": "채널",
+        "empty": "해당 채널의 영상이 없습니다.",
+        "errorTitle": "게시물을 불러오지 못했습니다",
+        "errorDescription": "새로고침 후 다시 시도해 주세요.",
+        "loading": "게시물을 불러오는 중입니다...",
+        "retry": "다시 시도",
+        "columns": {
+          "title": "제목",
+          "publishedAt": "게시일",
+          "privacy": "공개 범위",
+          "stats": "통계",
+          "link": "링크"
+        },
+        "stats": {
+          "views": "조회수",
+          "likes": "좋아요"
+        },
+        "linkLabel": "바로가기",
+        "pagination": {
+          "page": "{total}페이지 중 {current}페이지",
+          "prev": "이전",
+          "next": "다음"
+        }
+      },
+      "disconnect": {
+        "title": "채널 연동 해제",
+        "description": "Postio와 연결된 YouTube 채널을 해제합니다.",
+        "selectLabel": "해제할 채널 선택",
+        "button": "연결 끊기"
+      }
+    },
+    "callbackPage": {
+      "title": "YouTube 권한 인증",
+      "successTitle": "채널 연동이 완료되었습니다",
+      "successDescription": "이제 Postio에서 YouTube 채널을 사용할 수 있습니다.",
+      "errorTitle": "연동을 완료하지 못했습니다",
+      "errorDescription": "채널을 확인할 수 없었습니다. 다시 시도해 주세요.",
+      "backButton": "YouTube 설정으로 돌아가기",
+      "retryButton": "다시 연결 시도",
+      "messageLabel": "메시지"
+    },
+    "uploadPage": {
+      "title": "YouTube 영상 업로드",
+      "description": "Postio에서 바로 유튜브에 영상을 업로드하세요.",
+      "submit": "YouTube에 업로드",
+      "fields": {
+        "connection": "연결된 채널",
+        "privacy": "공개 범위",
+        "title": "제목",
+        "description": "설명",
+        "file": "영상 파일"
+      },
+      "placeholders": {
+        "title": "영상 제목을 입력하세요",
+        "description": "영상 설명을 입력하세요"
+      },
+      "privacy": {
+        "public": "전체 공개",
+        "private": "비공개"
+      },
+      "upload": {
+        "placeholder": "영상 파일을 선택하세요",
+        "helper": "기기에서 지원되는 영상 파일 첨부"
+      },
+      "errors": {
+        "noConnection": "업로드할 채널을 선택해 주세요.",
+        "noFile": "영상 파일을 첨부해 주세요.",
+        "noTitle": "영상 제목을 입력해 주세요."
+      },
+      "noConnection": {
+        "title": "먼저 채널을 연동해 주세요",
+        "description": "YouTube 채널을 연결해야 업로드를 진행할 수 있습니다.",
+        "button": "연동 페이지 열기"
+      },
+      "uploadSuccessTitle": "영상 업로드를 시작했어요",
+      "uploadSuccessDesc": "YouTube로 영상을 전송 중입니다.",
+      "uploadErrorTitle": "업로드에 실패했어요",
+      "uploadError": "입력값을 확인한 뒤 다시 시도해 주세요."
+    }
+  },
   "deploy": {
     "title": "배포",
     "description": "게시물을 관리하고 배포하세요",

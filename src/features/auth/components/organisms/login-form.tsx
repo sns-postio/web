@@ -27,7 +27,7 @@ export function LoginForm() {
       { identifier: email, password },
       {
         onSuccess: (res) => {
-          if (res.success) router.push(`/${locale}/deploy`);
+          if (res.success) router.push(`/${locale}/youtube`);
           else setError(res.message);
         },
         onError: () => setError(t("networkError")),
