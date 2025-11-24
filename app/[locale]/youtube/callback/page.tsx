@@ -8,11 +8,14 @@ import { AlertTriangle, CheckCircle2, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 export default function YoutubeCallbackPage() {
   return (
     <DashboardLayout>
-      <YoutubeCallbackContent />
+      <Suspense fallback={<CallbackFallback />}>
+        <YoutubeCallbackContent />
+      </Suspense>
     </DashboardLayout>
   );
 }
@@ -64,6 +67,14 @@ function YoutubeCallbackContent() {
           </div>
         </CardContent>
       </Card>
+    </div>
+  );
+}
+
+function CallbackFallback() {
+  return (
+    <div className="flex h-[60vh] items-center justify-center text-muted-foreground">
+      <Loader2 className="h-6 w-6 animate-spin" />
     </div>
   );
 }
