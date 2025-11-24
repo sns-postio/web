@@ -7,6 +7,7 @@ import type {
   YoutubePostsParams,
   YoutubeVideoPostRequest,
   YoutubeRedirectInfo,
+  YoutubeCallbackRequest,
 } from "./types";
 
 /**
@@ -22,6 +23,16 @@ export const fetchUserConnections = async (): Promise<ApiResponse<UserConnection
  */
 export const requestYoutubeRedirectUrl = async (): Promise<ApiResponse<YoutubeRedirectInfo>> => {
   const res = await api.get<ApiResponse<YoutubeRedirectInfo>>(YOUTUBE_ENDPOINTS.AUTH_REDIRECT);
+  return res.data;
+};
+
+/**
+ * 유튜브 콜백 처리
+ */
+export const handleYoutubeCallback = async (
+  payload: YoutubeCallbackRequest
+): Promise<ApiResponse<null>> => {
+  const res = await api.post<ApiResponse<null>>(YOUTUBE_ENDPOINTS.AUTH_CALLBACK, payload);
   return res.data;
 };
 

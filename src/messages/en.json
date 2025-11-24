@@ -166,7 +166,11 @@
       "disconnectSuccessTitle": "YouTube connection removed",
       "disconnectSuccessDesc": "The selected channel has been disconnected.",
       "disconnectErrorTitle": "Unable to disconnect channel",
-      "disconnectErrorDesc": "Please refresh and try again."
+      "disconnectErrorDesc": "Please refresh and try again.",
+      "connectSuccessTitle": "YouTube channel linked",
+      "connectSuccessDescription": "You can manage and schedule YouTube content now.",
+      "callbackErrorTitle": "Failed to finish connection",
+      "callbackErrorDescription": "Please retry the authorization flow."
     },
     "connectPage": {
       "title": "Connect your YouTube channel",

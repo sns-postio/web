@@ -42,3 +42,7 @@ export interface YoutubeVideoPostRequest {
 export interface YoutubeRedirectInfo {
   redirectUrl: string;
 }
+
+export interface YoutubeCallbackRequest {
+  code: string;
+}

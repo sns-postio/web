@@ -166,7 +166,11 @@
       "disconnectSuccessTitle": "YouTube 연동이 해제되었습니다",
       "disconnectSuccessDesc": "선택한 채널 연동을 끊었어요.",
       "disconnectErrorTitle": "채널을 해제하지 못했어요",
-      "disconnectErrorDesc": "새로고침 후 다시 시도해 주세요."
+      "disconnectErrorDesc": "새로고침 후 다시 시도해 주세요.",
+      "connectSuccessTitle": "YouTube 채널이 연결되었습니다",
+      "connectSuccessDescription": "이제 YouTube 콘텐츠를 관리하고 예약할 수 있어요.",
+      "callbackErrorTitle": "연동을 완료하지 못했어요",
+      "callbackErrorDescription": "다시 인증 절차를 진행해 주세요."
     },
     "connectPage": {
       "title": "YouTube 채널 연동",
