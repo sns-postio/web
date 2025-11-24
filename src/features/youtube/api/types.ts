@@ -4,11 +4,6 @@ export interface UserConnection {
   platform: string;
 }
 
-// 유튜브 리다이렉트 URL 응답
-export interface YoutubeRedirectInfo {
-  redirectUrl: string;
-}
-
 export interface YoutubePost {
   id: number;
   videoId: string;

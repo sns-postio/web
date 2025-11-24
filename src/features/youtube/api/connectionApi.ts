@@ -3,7 +3,6 @@ import type { ApiResponse } from "@/lib/types/api";
 import { YOUTUBE_ENDPOINTS } from "./endpoint";
 import type {
   UserConnection,
-  YoutubeRedirectInfo,
   YoutubePostsPayload,
   YoutubePostsParams,
   YoutubeVideoPostRequest,
@@ -14,14 +13,6 @@ import type {
  */
 export const fetchUserConnections = async (): Promise<ApiResponse<UserConnection[]>> => {
   const res = await api.get<ApiResponse<UserConnection[]>>(YOUTUBE_ENDPOINTS.CONNECTIONS);
-  return res.data;
-};
-
-/**
- * 유튜브 리다이렉트 URL 요청
- */
-export const requestYoutubeRedirectUrl = async (): Promise<ApiResponse<YoutubeRedirectInfo>> => {
-  const res = await api.get<ApiResponse<YoutubeRedirectInfo>>(YOUTUBE_ENDPOINTS.AUTH_REDIRECT);
   return res.data;
 };
 
