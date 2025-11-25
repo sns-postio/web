@@ -251,7 +251,8 @@
       "errorDescription": "We couldn't connect your channel. Please try again.",
       "backButton": "Back to YouTube settings",
       "retryButton": "Try connecting again",
-      "messageLabel": "Message"
+      "messageLabel": "Message",
+      "redirecting": "Redirecting you to the YouTube page..."
     },
     "uploadPage": {
       "title": "Upload a YouTube video",

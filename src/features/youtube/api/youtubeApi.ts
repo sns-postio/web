@@ -59,12 +59,7 @@ export const uploadYoutubeVideo = async (
 
   const res = await api.post<ApiResponse<null>>(
     YOUTUBE_ENDPOINTS.VIDEO_POST(payload.connectId),
-    formData,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    }
+    formData
   );
   return res.data;
 };

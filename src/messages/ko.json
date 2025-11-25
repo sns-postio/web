@@ -251,7 +251,8 @@
       "errorDescription": "채널을 확인할 수 없었습니다. 다시 시도해 주세요.",
       "backButton": "YouTube 설정으로 돌아가기",
       "retryButton": "다시 연결 시도",
-      "messageLabel": "메시지"
+      "messageLabel": "메시지",
+      "redirecting": "곧 YouTube 페이지로 이동합니다..."
     },
     "uploadPage": {
       "title": "YouTube 영상 업로드",
