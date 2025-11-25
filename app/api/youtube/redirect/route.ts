@@ -1,16 +1,19 @@
-// app/api/youtube/redirect/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
   try {
-    // 커스텀 헤더에서 토큰 가져오기
     const accessToken = request.headers.get("x-access-token");
 
     if (!accessToken) {
       return NextResponse.json({ error: "Access token is required" }, { status: 401 });
     }
 
-    const apiUrl = process.env.NEXT_PUBLIC_API_BASE + "/youtube/auth";
+    const baseUrl = process.env.NEXT_PUBLIC_API_BASE;
+    if (!baseUrl) {
+      return NextResponse.json({ error: "API base URL is missing" }, { status: 500 });
+    }
+
+    const apiUrl = `${baseUrl}/youtube/auth`;
 
     const response = await fetch(apiUrl, {
       method: "GET",
