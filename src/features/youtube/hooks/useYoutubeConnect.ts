@@ -20,13 +20,10 @@ export function useYoutubeConnect() {
       }
 
       const response = await fetch("/api/youtube/redirect", {
-        method: "POST",
+        method: "GET",
         headers: {
-          "Content-Type": "application/json",
+          "x-access-token": token,
         },
-        body: JSON.stringify({
-          accessToken: token,
-        }),
       });
 
       if (!response.ok) {
@@ -40,7 +37,6 @@ export function useYoutubeConnect() {
         throw new Error(t("redirectErrorDescription"));
       }
 
-      // 리다이렉트 실행
       window.location.href = data.redirectUrl;
     },
     onError: (error) => {

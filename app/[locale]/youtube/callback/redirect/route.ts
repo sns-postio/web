@@ -1,9 +1,10 @@
 // app/api/youtube/redirect/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
-    const { accessToken } = await request.json();
+    // 커스텀 헤더에서 토큰 가져오기
+    const accessToken = request.headers.get("x-access-token");
 
     if (!accessToken) {
       return NextResponse.json({ error: "Access token is required" }, { status: 401 });
@@ -19,7 +20,6 @@ export async function POST(request: NextRequest) {
       redirect: "manual",
     });
 
-    // 3xx 응답인 경우
     if (response.status >= 300 && response.status < 400) {
       const location = response.headers.get("location");
 
