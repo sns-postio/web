@@ -1,47 +1,47 @@
+// useYoutubeConnect.ts
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
 import { AuthService } from "@/features/auth/api/service";
-import { YOUTUBE_ENDPOINTS } from "../api/endpoint";
 
 export function useYoutubeConnect() {
   const t = useTranslations("youtube.messages");
-  const redirectEndpoint =
-    (process.env.NEXT_PUBLIC_API_BASE ?? "") + YOUTUBE_ENDPOINTS.AUTH_REDIRECT;
 
   return useMutation<void>({
     mutationFn: async () => {
       if (typeof window === "undefined") return;
 
-      if (!redirectEndpoint) {
+      const token = AuthService.getAccessToken();
+
+      if (!token) {
         throw new Error(t("redirectErrorDescription"));
       }
 
-      const token = AuthService.getAccessToken();
-      const headers: HeadersInit = {};
-      if (token) {
-        headers.Authorization = `Bearer ${token}`;
-      }
-
-      const response = await fetch(redirectEndpoint, {
-        method: "GET",
-        headers,
-        credentials: "include",
-        redirect: "manual",
+      const response = await fetch("/api/youtube/redirect", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          accessToken: token,
+        }),
       });
 
-      const location = response.headers.get("Location");
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || t("redirectErrorDescription"));
+      }
 
-      if (
-        !location ||
-        ![301, 302, 303, 307, 308].includes(response.status)
-      ) {
+      const data = await response.json();
+
+      if (!data.redirectUrl) {
         throw new Error(t("redirectErrorDescription"));
       }
 
-      window.location.href = location;
+      // 리다이렉트 실행
+      window.location.href = data.redirectUrl;
     },
     onError: (error) => {
       toast({
