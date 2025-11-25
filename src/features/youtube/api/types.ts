@@ -4,10 +4,6 @@ export interface UserConnection {
   platform: string;
 }
 
-export interface urlbody {
-  url: string;
-}
-
 export interface YoutubePost {
   id: number;
   videoId: string;
