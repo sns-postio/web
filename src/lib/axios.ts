@@ -16,7 +16,7 @@ api.interceptors.request.use(
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-    if (config.data instanceof FormData && config.headers) {
+    if (isFormData(config.data) && config.headers) {
       delete config.headers["Content-Type"];
       delete config.headers["content-type"];
     }
@@ -24,6 +24,16 @@ api.interceptors.request.use(
   },
   (error) => Promise.reject(error)
 );
+
+function isFormData(data: unknown): data is FormData {
+  if (!data) return false;
+  if (typeof FormData !== "undefined" && data instanceof FormData) return true;
+  return (
+    typeof data === "object" &&
+    typeof (data as FormData).append === "function" &&
+    typeof (data as FormData).get === "function"
+  );
+}
 
 // 응답 인터셉터 — 401 시 자동 재발급
 let isRefreshing = false;
