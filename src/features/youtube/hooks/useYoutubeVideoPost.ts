@@ -11,6 +11,10 @@ export function useYoutubeVideoPost() {
 
   return useMutation({
     mutationFn: async (payload: YoutubeVideoPostRequest) => {
+      if (process.env.NODE_ENV !== "production") {
+        // 업로드 직전에 파일 객체가 올바른지 확인
+        console.log("Uploading YouTube file:", payload.file);
+      }
       const res = await uploadYoutubeVideo(payload);
       if (!res.success) {
         throw new Error(res.message || t("uploadError"));
