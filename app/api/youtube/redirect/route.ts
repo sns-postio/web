@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { YOUTUBE_ENDPOINTS } from "@/features/youtube/api/endpoint";
 
 export async function GET(request: NextRequest) {
   try {
@@ -13,7 +14,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "API base URL is missing" }, { status: 500 });
     }
 
-    const apiUrl = `${baseUrl}/youtube/auth`;
+    const apiUrl = `${baseUrl ?? ""}${YOUTUBE_ENDPOINTS.AUTH_REDIRECT}`;
 
     const response = await fetch(apiUrl, {
       method: "GET",
@@ -25,13 +26,20 @@ export async function GET(request: NextRequest) {
 
     if (response.status >= 300 && response.status < 400) {
       const location = response.headers.get("location");
-
       if (location) {
         return NextResponse.json({ redirectUrl: location });
       }
     }
 
-    return NextResponse.json({ error: "No redirect found" }, { status: 400 });
+    const contentType = response.headers.get("content-type");
+    if (contentType?.includes("application/json")) {
+      const data = await response.json();
+      if (data?.url) {
+        return NextResponse.json({ redirectUrl: data.url });
+      }
+    }
+
+    return NextResponse.json({ error: "No redirect found" }, { status: response.status || 400 });
   } catch (error) {
     return NextResponse.json({ error: "Failed to fetch redirect" }, { status: 500 });
   }
