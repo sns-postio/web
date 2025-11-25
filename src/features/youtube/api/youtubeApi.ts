@@ -23,7 +23,9 @@ export const fetchUserConnections = async (): Promise<ApiResponse<UserConnection
  * GET /v1/auth/youtube 엔드포인트에 요청하여 OAuth 리다이렉션 URL을 받습니다.
  */
 export const startYoutubeAuth = async (): Promise<ApiResponse<urlbody>> => {
-  const res = await api.get<ApiResponse<urlbody>>(YOUTUBE_ENDPOINTS.AUTH_REDIRECT);
+  const res = await api.get<ApiResponse<urlbody>>(YOUTUBE_ENDPOINTS.AUTH_REDIRECT, {
+    validateStatus: (status) => status === 304 || (status >= 200 && status < 300),
+  });
   return res.data;
 };
 
