@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { fetchYoutubePosts } from "../api/connectionApi";
+import { fetchYoutubePosts } from "../api/youtubeApi";
 import type { YoutubePostsParams } from "../api/types";
 
 export function useYoutubePosts(params: YoutubePostsParams, enabled = true) {

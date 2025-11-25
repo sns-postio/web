@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { uploadYoutubeVideo } from "../api/connectionApi";
+import { uploadYoutubeVideo } from "../api/youtubeApi";
 import type { YoutubeVideoPostRequest } from "../api/types";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";

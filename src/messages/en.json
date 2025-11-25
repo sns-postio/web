@@ -204,6 +204,7 @@
         "title": "Recent YouTube posts",
         "description": "Review your uploaded videos and open them directly on YouTube.",
         "selectLabel": "Channel",
+        "hint": "Enter a connect ID to load posts.",
         "empty": "No videos found for this channel.",
         "errorTitle": "Unable to load posts",
         "errorDescription": "Refresh the page or try again.",

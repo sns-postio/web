@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { disconnectYoutube } from "../api/connectionApi";
+import { disconnectYoutube } from "../api/youtubeApi";
 import { USER_CONNECTIONS_QUERY_KEY } from "./useUserConnections";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { fetchUserConnections } from "../api/connectionApi";
+import { fetchUserConnections } from "../api/youtubeApi";
 import type { UserConnection } from "../api/types";
 
 export const USER_CONNECTIONS_QUERY_KEY = ["userConnections"];

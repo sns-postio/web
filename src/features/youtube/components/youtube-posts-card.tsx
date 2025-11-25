@@ -1,42 +1,60 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Loader2, RefreshCw } from "lucide-react";
-import type { UserConnection, YoutubePostsPayload } from "../api/types";
+import type { UserConnection } from "../api/types";
+import { useYoutubePosts } from "../hooks/useYoutubePosts";
 
 interface YoutubePostsCardProps {
   connections: UserConnection[];
-  activeConnectId: string;
-  onConnectChange: (id: string) => void;
-  postsData?: YoutubePostsPayload;
-  postsLoading: boolean;
-  postsError: boolean;
-  onRetry: () => void;
-  postsPage: number;
-  onPageChange: (page: number) => void;
-  pageSize: number;
 }
 
-export function YoutubePostsCard({
-  connections,
-  activeConnectId,
-  onConnectChange,
-  postsData,
-  postsLoading,
-  postsError,
-  onRetry,
-  postsPage,
-  onPageChange,
-  pageSize,
-}: YoutubePostsCardProps) {
+const PAGE_SIZE = 5;
+
+export function YoutubePostsCard({ connections }: YoutubePostsCardProps) {
   const t = useTranslations("youtube.connectPage.posts");
+  const formT = useTranslations("youtube.previewPage.form");
   const locale = useLocale();
-  const totalPages = postsData?.total ? Math.max(1, Math.ceil(postsData.total / pageSize)) : 1;
-  const items = postsData?.items ?? [];
+  const [connectIdInput, setConnectIdInput] = useState("");
+  const [queryConnectId, setQueryConnectId] = useState("");
+  const [page, setPage] = useState(1);
+  const [autoFilled, setAutoFilled] = useState(false);
+
+  useEffect(() => {
+    if (connections.length && !autoFilled) {
+      const firstId = connections[0].id.toString();
+      setConnectIdInput(firstId);
+      setQueryConnectId(firstId);
+      setAutoFilled(true);
+    }
+  }, [connections, autoFilled]);
+
+  const {
+    data,
+    isLoading,
+    isError,
+    isFetching,
+    refetch,
+  } = useYoutubePosts(
+    { connectId: queryConnectId, page, limit: PAGE_SIZE },
+    Boolean(queryConnectId)
+  );
+
+  const items = data?.items ?? [];
+  const totalPages = data?.total ? Math.max(1, Math.ceil(data.total / PAGE_SIZE)) : 1;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!connectIdInput.trim()) return;
+    setQueryConnectId(connectIdInput.trim());
+    setPage(1);
+  };
 
   return (
     <Card>
@@ -45,40 +63,56 @@ export function YoutubePostsCard({
         <CardDescription>{t("description")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <label className="flex flex-col gap-2 text-sm font-medium sm:w-72">
-          {t("selectLabel")}
-          <select
-            value={activeConnectId}
-            onChange={(e) => onConnectChange(e.target.value)}
-            className="rounded-md border border-input bg-background px-3 py-2 text-base"
-          >
-            {connections.map((connection) => (
-              <option key={connection.id} value={connection.id}>
-                #{connection.id} · {connection.platform}
-              </option>
-            ))}
-          </select>
-        </label>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:flex-row sm:items-end">
+          <label className="flex-1 text-sm font-medium">
+            {formT("label")}
+            <Input
+              value={connectIdInput}
+              onChange={(e) => setConnectIdInput(e.target.value)}
+              placeholder={formT("placeholder")}
+              className="mt-2"
+            />
+          </label>
+          <div className="flex gap-2">
+            <Button type="submit" disabled={!connectIdInput.trim()}>
+              {formT("submit")}
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => {
+                setConnectIdInput("");
+                setQueryConnectId("");
+                setAutoFilled(false);
+                setPage(1);
+              }}
+            >
+              {formT("reset")}
+            </Button>
+          </div>
+        </form>
 
-        {postsLoading ? (
+        {!queryConnectId && <p className="text-sm text-muted-foreground">{t("hint")}</p>}
+
+        {queryConnectId && isLoading ? (
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Loader2 className="h-4 w-4 animate-spin" />
             <span>{t("loading")}</span>
           </div>
-        ) : postsError ? (
+        ) : queryConnectId && isError ? (
           <Alert variant="destructive">
             <AlertTitle>{t("errorTitle")}</AlertTitle>
             <AlertDescription className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <span>{t("errorDescription")}</span>
-              <Button variant="outline" size="sm" onClick={onRetry}>
+              <Button variant="outline" size="sm" onClick={() => refetch()}>
                 <RefreshCw className="mr-2 h-4 w-4" />
                 {t("retry")}
               </Button>
             </AlertDescription>
           </Alert>
-        ) : items.length === 0 ? (
+        ) : queryConnectId && items.length === 0 ? (
           <p className="text-sm text-muted-foreground">{t("empty")}</p>
-        ) : (
+        ) : queryConnectId ? (
           <div className="space-y-4">
             <div className="overflow-x-auto rounded-lg border">
               <table className="w-full text-sm">
@@ -123,25 +157,25 @@ export function YoutubePostsCard({
               </table>
             </div>
 
-            {postsData && postsData.total > pageSize && (
+            {data && data.total > PAGE_SIZE && (
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <span className="text-sm text-muted-foreground">
-                  {t("pagination.page", { current: postsPage, total: totalPages })}
+                  {t("pagination.page", { current: page, total: totalPages })}
                 </span>
                 <div className="flex gap-2">
                   <Button
                     variant="outline"
                     size="sm"
-                    disabled={postsPage === 1}
-                    onClick={() => onPageChange(Math.max(1, postsPage - 1))}
+                    disabled={page === 1 || isFetching}
+                    onClick={() => setPage(Math.max(1, page - 1))}
                   >
                     {t("pagination.prev")}
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
-                    disabled={postsPage >= totalPages}
-                    onClick={() => onPageChange(Math.min(totalPages, postsPage + 1))}
+                    disabled={page >= totalPages || isFetching}
+                    onClick={() => setPage(Math.min(totalPages, page + 1))}
                   >
                     {t("pagination.next")}
                   </Button>
@@ -149,7 +183,7 @@ export function YoutubePostsCard({
               </div>
             )}
           </div>
-        )}
+        ) : null}
       </CardContent>
     </Card>
   );

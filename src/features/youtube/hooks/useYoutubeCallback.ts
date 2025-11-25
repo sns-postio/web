@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
-import { handleYoutubeCallback } from "../api/connectionApi";
+import { handleYoutubeCallback } from "../api/youtubeApi";
 import { USER_CONNECTIONS_QUERY_KEY } from "./useUserConnections";
 
 export function useYoutubeCallback() {

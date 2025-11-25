@@ -204,6 +204,7 @@
         "title": "최근 YouTube 게시물",
         "description": "업로드된 영상을 확인하고 바로 YouTube에서 열어보세요.",
         "selectLabel": "채널",
+        "hint": "Connect ID를 입력해 게시물을 조회하세요.",
         "empty": "해당 채널의 영상이 없습니다.",
         "errorTitle": "게시물을 불러오지 못했습니다",
         "errorDescription": "새로고침 후 다시 시도해 주세요.",
