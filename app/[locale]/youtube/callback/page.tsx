@@ -5,12 +5,11 @@ import { DashboardLayout } from "@/components/dashboard/dashboard-layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useYoutubeConnect } from "@/features/youtube/hooks/useYoutubeConnect";
-import { useYoutubeCallback } from "@/features/youtube/hooks/useYoutubeCallback";
 import { AlertTriangle, CheckCircle2, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 
 export default function YoutubeCallbackPage() {
   return (
@@ -28,19 +27,7 @@ function YoutubeCallbackContent() {
   const searchParams = useSearchParams();
   const status = (searchParams.get("status") || "").toLowerCase();
   const message = searchParams.get("message");
-  const code = searchParams.get("code");
   const { mutate: reconnect, isPending } = useYoutubeConnect();
-  const {
-    mutate: handleCallback,
-    isPending: isCallbackPending,
-    isSuccess: isCallbackSuccess,
-  } = useYoutubeCallback();
-
-  useEffect(() => {
-    if (code && !isCallbackSuccess && !isCallbackPending) {
-      handleCallback(code);
-    }
-  }, [code, handleCallback, isCallbackPending, isCallbackSuccess]);
 
   const isSuccess = status === "success" || status === "connected";
   const Icon = isSuccess ? CheckCircle2 : AlertTriangle;
@@ -70,17 +57,17 @@ function YoutubeCallbackContent() {
             </div>
           </div>
 
-          {!code && (
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Button asChild variant="secondary" className="w-full">
-                <Link href={`/${locale}/youtube`}>{t("backButton")}</Link>
-              </Button>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button asChild variant="secondary" className="w-full">
+              <Link href={`/${locale}/youtube`}>{t("backButton")}</Link>
+            </Button>
+            {!isSuccess && (
               <Button onClick={() => reconnect()} disabled={isPending} className="w-full">
                 {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {t("retryButton")}
               </Button>
-            </div>
-          )}
+            )}
+          </div>
         </CardContent>
       </Card>
     </div>

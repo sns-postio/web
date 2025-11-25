@@ -235,6 +235,14 @@
         "button": "연결 끊기"
       }
     },
+    "previewPage": {
+      "form": {
+        "label": "Connect ID",
+        "placeholder": "Connect ID를 입력하세요",
+        "submit": "게시물 불러오기",
+        "reset": "초기화"
+      }
+    },
     "callbackPage": {
       "title": "YouTube 권한 인증",
       "successTitle": "채널 연동이 완료되었습니다",

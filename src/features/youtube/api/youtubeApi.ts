@@ -1,12 +1,13 @@
 import api from "@/lib/axios";
 import type { ApiResponse } from "@/lib/types/api";
 import { YOUTUBE_ENDPOINTS } from "./endpoint";
-import type {
-  UserConnection,
-  YoutubePostsPayload,
-  YoutubePostsParams,
-  YoutubeVideoPostRequest,
-  YoutubeCallbackRequest,
+import {
+  type UserConnection,
+  type YoutubePostsPayload,
+  type YoutubePostsParams,
+  type YoutubeVideoPostRequest,
+  type YoutubeCallbackRequest,
+  urlbody,
 } from "./types";
 
 /**
@@ -18,12 +19,11 @@ export const fetchUserConnections = async (): Promise<ApiResponse<UserConnection
 };
 
 /**
- * 유튜브 콜백 처리
+ * 유튜브 연동 시작 (인증 URL 요청)
+ * GET /v1/auth/youtube 엔드포인트에 요청하여 OAuth 리다이렉션 URL을 받습니다.
  */
-export const handleYoutubeCallback = async (
-  payload: YoutubeCallbackRequest
-): Promise<ApiResponse<null>> => {
-  const res = await api.post<ApiResponse<null>>(YOUTUBE_ENDPOINTS.AUTH_CALLBACK, payload);
+export const startYoutubeAuth = async (): Promise<ApiResponse<urlbody>> => {
+  const res = await api.get<ApiResponse<urlbody>>(YOUTUBE_ENDPOINTS.AUTH_REDIRECT);
   return res.data;
 };
 

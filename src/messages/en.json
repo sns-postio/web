@@ -235,6 +235,14 @@
         "button": "Disconnect"
       }
     },
+    "previewPage": {
+      "form": {
+        "label": "Connect ID",
+        "placeholder": "Enter a connect ID",
+        "submit": "Load posts",
+        "reset": "Reset"
+      }
+    },
     "callbackPage": {
       "title": "YouTube authorization",
       "successTitle": "Your channel is now linked",
