@@ -2,11 +2,8 @@
 // 사용자 정보
 // --------------------
 export interface User {
-  id: string;
-  email: string;
   accountType: string;
   planType: string;
-  createdAt: string;
 }
 
 // --------------------
@@ -67,4 +64,3 @@ export interface LoginResponse {
 export interface VerificationCodeData {
   code: number;
 }
-

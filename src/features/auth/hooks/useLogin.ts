@@ -14,11 +14,8 @@ export function useLogin() {
       if (res.success && res.data) {
         const { accessToken, accountType, planType } = res.data;
         const user: User = {
-          id: Date.now().toString(),
-          email: variables.identifier,
           accountType,
           planType,
-          createdAt: new Date().toISOString(),
         };
         AuthService.setAccessToken(accessToken);
         AuthService.setUser(user);
