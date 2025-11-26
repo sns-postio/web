@@ -13,6 +13,7 @@ export function useSignup() {
       if (res.success && res.data) {
         const { accessToken, accountType, planType } = res.data;
         const user: User = {
+          email: variables.identifier,
           accountType,
           planType,
         };

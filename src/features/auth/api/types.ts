@@ -2,6 +2,7 @@
 // 사용자 정보
 // --------------------
 export interface User {
+  email: string;
   accountType: string;
   planType: string;
 }

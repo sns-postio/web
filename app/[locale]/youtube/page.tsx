@@ -40,8 +40,12 @@ function YoutubeIntegrationContent() {
         onConnect={() => startYoutubeConnect()}
         manageHref={isConnected ? `/${locale}/youtube/videos` : undefined}
       />
-      <YoutubePostsCard connections={youtubeConnections} />
-      {isConnected && <YoutubeDisconnectCard connections={youtubeConnections} />}
+      {isConnected && (
+        <>
+          <YoutubePostsCard connections={youtubeConnections} />
+          <YoutubeDisconnectCard connections={youtubeConnections} />
+        </>
+      )}
       <YoutubeGuideCard />
     </div>
   );
