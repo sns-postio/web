@@ -53,6 +53,7 @@
       "placeholderPassword": "Enter your password",
       "errorEmpty": "Please enter both your email and password",
       "networkError": "A network error occurred. Please try again.",
+      "passwordError": "Incorrect password. Please try again.",
       "button": "Sign In"
     },
     "signup": {

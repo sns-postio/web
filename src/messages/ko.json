@@ -53,6 +53,7 @@
       "placeholderPassword": "비밀번호를 입력하세요",
       "errorEmpty": "이메일과 비밀번호를 모두 입력해주세요",
       "networkError": "네트워크 오류가 발생했습니다",
+      "passwordError": "비밀번호가 올바르지 않습니다. 다시 입력해 주세요.",
       "button": "로그인"
     },
     "signup": {

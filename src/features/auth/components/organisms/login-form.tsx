@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import axios from "axios";
 
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -30,7 +31,13 @@ export function LoginForm() {
           if (res.success) router.push(`/${locale}/youtube`);
           else setError(res.message);
         },
-        onError: () => setError(t("networkError")),
+        onError: (error) => {
+          if (axios.isAxiosError(error) && error.response?.status === 400) {
+            setError(t("passwordError"));
+            return;
+          }
+          setError(t("networkError"));
+        },
       }
     );
   };
