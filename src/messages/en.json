@@ -215,8 +215,13 @@
           "title": "Title",
           "publishedAt": "Published",
           "privacy": "Privacy",
+          "type": "Format",
           "stats": "Stats",
           "link": "Link"
+        },
+        "types": {
+          "short": "Shorts",
+          "video": "Video"
         },
         "stats": {
           "views": "Views",

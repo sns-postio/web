@@ -113,6 +113,7 @@ export function YoutubePostsCard({ connections }: YoutubePostsCardProps) {
                     <th className="px-4 py-2">{t("columns.title")}</th>
                     <th className="px-4 py-2">{t("columns.publishedAt")}</th>
                     <th className="px-4 py-2">{t("columns.privacy")}</th>
+                    <th className="px-4 py-2">{t("columns.type")}</th>
                     <th className="px-4 py-2">{t("columns.stats")}</th>
                     <th className="px-4 py-2">{t("columns.link")}</th>
                   </tr>
@@ -125,6 +126,9 @@ export function YoutubePostsCard({ connections }: YoutubePostsCardProps) {
                         {new Date(post.publishedAt).toLocaleString(locale)}
                       </td>
                       <td className="px-4 py-3 capitalize">{post.privacyStatus}</td>
+                      <td className="px-4 py-3 capitalize">
+                        {post.isShort ? t("types.short") : t("types.video")}
+                      </td>
                       <td className="px-4 py-3 text-sm text-muted-foreground">
                         <div>
                           {t("stats.views")}: <span className="font-medium">{post.viewCount}</span>

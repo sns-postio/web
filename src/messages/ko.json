@@ -215,8 +215,13 @@
           "title": "제목",
           "publishedAt": "게시일",
           "privacy": "공개 범위",
+          "type": "형식",
           "stats": "통계",
           "link": "링크"
+        },
+        "types": {
+          "short": "쇼츠",
+          "video": "일반 영상"
         },
         "stats": {
           "views": "조회수",
