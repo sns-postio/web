@@ -3,15 +3,12 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { DashboardLayout } from "@/components/dashboard/dashboard-layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 
 export default function YoutubeCallbackPage() {
   return (
-    <DashboardLayout>
       <YoutubeCallbackContent />
-    </DashboardLayout>
   );
 }
 

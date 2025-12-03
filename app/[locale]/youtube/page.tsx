@@ -1,6 +1,5 @@
 "use client";
 
-import { DashboardLayout } from "@/components/dashboard/dashboard-layout";
 import { useYoutubeConnect } from "@/features/youtube/hooks/useYoutubeConnect";
 import { useUserConnections } from "@/features/youtube/hooks/useUserConnections";
 import { useLocale } from "next-intl";
@@ -12,9 +11,7 @@ import { YoutubeGuideCard } from "@/features/youtube/components/youtube-guide-ca
 
 export default function YoutubeIntegrationPage() {
   return (
-    <DashboardLayout>
       <YoutubeIntegrationContent />
-    </DashboardLayout>
   );
 }
 
