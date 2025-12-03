@@ -347,19 +347,73 @@
     },
     "postsCard": {
       "title": "Instagram 게시물",
-      "error": "게시물을 불러오지 못했습니다.",
-      "noCaption": "설명이 없습니다."
+      "description": "선택한 Instagram 계정에서 최신 게시물을 확인하세요.",
+      "hint": "연결된 Instagram 계정을 선택하면 게시물이 표시됩니다.",
+      "selectLabel": "계정",
+      "loading": "게시물을 불러오는 중입니다...",
+      "errorTitle": "Instagram 게시물을 불러오지 못했습니다",
+      "errorDescription": "새로고침하거나 잠시 후 다시 시도해 주세요.",
+      "retry": "다시 시도",
+      "empty": "이 계정에는 게시물이 없습니다.",
+      "noCaption": "설명이 없습니다.",
+      "columns": {
+        "media": "게시물",
+        "caption": "캡션",
+        "publishedAt": "게시일",
+        "stats": "성과",
+        "link": "링크"
+      },
+      "stats": {
+        "likes": "좋아요",
+        "comments": "댓글"
+      },
+      "linkLabel": "열기",
+      "pagination": {
+        "page": "{total}페이지 중 {current}페이지",
+        "prev": "이전",
+        "next": "다음"
+      }
     },
     "page": {
       "title": "Instagram 게시물 보기",
       "description": "연동된 계정을 선택해 최신 게시물을 확인하세요.",
+      "loading": "Instagram 연동 상태를 확인하는 중입니다...",
+      "status": {
+        "connected": "Instagram 계정이 연결되었습니다",
+        "disconnected": "Instagram 계정이 연결되지 않았습니다"
+      },
+      "statusDetail": {
+        "connected": "게시물과 분석 데이터가 Postio 워크스페이스와 동기화되었습니다.",
+        "disconnected": "Instagram을 연동하면 Postio에서 게시물 분석과 관리를 할 수 있습니다."
+      },
+      "cta": {
+        "connect": "Instagram 연동하기",
+        "reconnect": "다시 연동하기",
+        "retry": "다시 시도",
+        "manage": "Instagram 페이지 열기"
+      },
+      "error": {
+        "title": "연동 상태를 불러오지 못했습니다",
+        "description": "페이지를 새로고침하거나 잠시 후 다시 시도해 주세요."
+      },
       "selectPlaceholder": "연결된 Instagram 계정을 선택하세요",
+      "selectTitle": "Instagram 계정을 선택하세요",
       "empty": "연결된 Instagram 계정이 없습니다.",
       "loadError": "Instagram 계정을 불러오지 못했습니다.",
-      "connectButton": "Instagram 연동하기",
-      "connecting": "연동 중...",
       "connectedStatus": "총 {count}개의 Instagram 계정이 연결되어 있습니다.",
-      "refresh": "새로고침"
+      "refresh": "새로고침",
+      "disconnect": {
+        "title": "Instagram 연동 해제",
+        "description": "Postio에서 선택한 Instagram 계정 연동을 해제합니다.",
+        "selectLabel": "해제할 계정을 선택하세요",
+        "button": "연동 해제"
+      },
+      "guide": {
+        "title": "Instagram 연동 절차 안내",
+        "line1": "Postio에서 안전한 리다이렉트 주소를 발급받습니다.",
+        "line2": "Meta 인증 화면에서 요청된 권한을 승인합니다.",
+        "line3": "Postio로 돌아오면 Instagram 계정 정보가 동기화됩니다."
+      }
     }
   },
   "deploy": {

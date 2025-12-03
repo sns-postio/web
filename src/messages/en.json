@@ -346,20 +346,74 @@
       "postsErrorDescription": "Please try again shortly."
     },
     "postsCard": {
-      "title": "Instagram Posts",
-      "error": "Couldn't load the latest posts.",
-      "noCaption": "No caption"
+      "title": "Instagram posts",
+      "description": "View the latest feed items from the selected Instagram account.",
+      "hint": "Select a connected Instagram account to load posts.",
+      "selectLabel": "Account",
+      "loading": "Loading posts...",
+      "errorTitle": "Unable to load Instagram posts",
+      "errorDescription": "Refresh the list or try again soon.",
+      "retry": "Retry",
+      "empty": "No posts found for this account.",
+      "noCaption": "No caption",
+      "columns": {
+        "media": "Post",
+        "caption": "Caption",
+        "publishedAt": "Published",
+        "stats": "Performance",
+        "link": "Link"
+      },
+      "stats": {
+        "likes": "Likes",
+        "comments": "Comments"
+      },
+      "linkLabel": "Open",
+      "pagination": {
+        "page": "Page {current} of {total}",
+        "prev": "Previous",
+        "next": "Next"
+      }
     },
     "page": {
       "title": "Instagram Posts",
       "description": "Pick a linked account to view the latest posts.",
+      "loading": "Checking your Instagram connections...",
+      "status": {
+        "connected": "Instagram account connected",
+        "disconnected": "Instagram account not connected"
+      },
+      "statusDetail": {
+        "connected": "Posts and analytics are synced with your Postio workspace.",
+        "disconnected": "Connect Instagram to analyze and manage posts directly from Postio."
+      },
+      "cta": {
+        "connect": "Connect Instagram",
+        "reconnect": "Reconnect",
+        "retry": "Retry",
+        "manage": "Open Instagram page"
+      },
+      "error": {
+        "title": "Unable to load connection status",
+        "description": "Refresh the page or try again later."
+      },
       "selectPlaceholder": "Select an Instagram connection",
+      "selectTitle": "Choose an Instagram account",
       "empty": "No Instagram connections found.",
       "loadError": "Unable to load Instagram connections.",
-      "connectButton": "Connect Instagram",
-      "connecting": "Connecting...",
       "connectedStatus": "{count} Instagram account(s) connected.",
-      "refresh": "Refresh"
+      "refresh": "Refresh",
+      "disconnect": {
+        "title": "Disconnect Instagram account",
+        "description": "Remove a linked Instagram account from Postio.",
+        "selectLabel": "Choose the account you want to disconnect",
+        "button": "Disconnect"
+      },
+      "guide": {
+        "title": "How the Instagram connection works",
+        "line1": "Request a secure redirect URL from Postio.",
+        "line2": "Approve the requested permissions on Meta's consent screen.",
+        "line3": "Return to Postio so we can sync your Instagram account."
+      }
     }
   },
   "deploy": {
