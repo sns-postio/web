@@ -30,6 +30,11 @@
     "login": "로그인",
     "loggedInTitle": "환영합니다!",
     "loggedInDesc": "성공적으로 로그인되었습니다. 오른쪽 위 사용자 메뉴에서 계정을 관리하세요.",
+    "header": {
+      "serviceIntro": "서비스 소개",
+      "channelManagement": "채널별 관리",
+      "myPage": "마이페이지"
+    },
     "features": {
       "secure": "안전한 계정 연결",
       "collab": "팀 협업 & 승인 워크플로",
@@ -142,6 +147,31 @@
       "confirmPlaceholder": "비밀번호를 다시 입력하세요",
       "mismatch": "비밀번호가 일치하지 않습니다",
       "match": "비밀번호가 일치합니다"
+    }
+  },
+  "channelManagement": {
+    "title": "연동 관리",
+    "description": "소셜 미디어 계정을 연동하고 상태를 확인하세요.",
+    "status": {
+      "connected": "연동됨",
+      "disconnected": "미연동"
+    },
+    "labels": {
+      "accountId": "계정 ID",
+      "connectedAt": "연동일시",
+      "lastSynced": "마지막 업데이트"
+    },
+    "actions": {
+      "openPage": "페이지",
+      "viewAnalytics": "분석 보기",
+      "connect": "연동하기"
+    },
+    "platformDescriptions": {
+      "youtube": "연동된 채널에서 예약 발행과 리포트를 바로 확인할 수 있습니다.",
+      "facebook": "페이지 게시와 메시지를 통합해서 관리하세요.",
+      "instagram": "릴스와 스토리, 피드 성과를 한 번에 추적합니다.",
+      "threads": "Threads 데이터를 통합 리포트에 추가할 수 있습니다.",
+      "tiktok": "TikTok 계정을 연동해 숏폼 성과를 비교하세요."
     }
   },
   "navigation": {

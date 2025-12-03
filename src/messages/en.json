@@ -30,6 +30,11 @@
     "login": "Sign In",
     "loggedInTitle": "Welcome!",
     "loggedInDesc": "You’re successfully logged in. Manage your account from the top-right menu.",
+    "header": {
+      "serviceIntro": "Product",
+      "channelManagement": "Channel Management",
+      "myPage": "My Page"
+    },
     "features": {
       "secure": "Secure Account Linking",
       "collab": "Team Collaboration & Approval Workflow",
@@ -142,6 +147,31 @@
       "confirmPlaceholder": "Re-enter your password",
       "mismatch": "Passwords do not match",
       "match": "Passwords match"
+    }
+  },
+  "channelManagement": {
+    "title": "Channel Management",
+    "description": "Link your social channels and keep an eye on their status.",
+    "status": {
+      "connected": "Connected",
+      "disconnected": "Not connected"
+    },
+    "labels": {
+      "accountId": "Account ID",
+      "connectedAt": "Connected at",
+      "lastSynced": "Last updated"
+    },
+    "actions": {
+      "openPage": "Open Page",
+      "viewAnalytics": "View Analytics",
+      "connect": "Connect"
+    },
+    "platformDescriptions": {
+      "youtube": "Schedule content and pull performance reports right away.",
+      "facebook": "Manage page posts and inbox conversations in one place.",
+      "instagram": "Track reels, stories, and feed metrics together.",
+      "threads": "Add Threads insights to your unified report.",
+      "tiktok": "Compare TikTok short-form performance after you connect."
     }
   },
   "navigation": {
