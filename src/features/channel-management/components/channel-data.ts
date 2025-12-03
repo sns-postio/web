@@ -26,12 +26,12 @@ export const PLATFORM_META: Record<string, PlatformMeta> = {
   //   icon: Facebook,
   //   accentClass: "bg-blue-500/10 text-blue-600",
   // },
-  // INSTAGRAM: {
-  //   name: "Instagram",
-  //   descriptionKey: "instagram",
-  //   icon: Instagram,
-  //   accentClass: "bg-pink-500/10 text-pink-600",
-  // },
+  INSTAGRAM: {
+    name: "Instagram",
+    descriptionKey: "instagram",
+    icon: Instagram,
+    accentClass: "bg-pink-500/10 text-pink-600",
+  },
   // THREADS: {
   //   name: "Threads",
   //   descriptionKey: "threads",
@@ -45,5 +45,5 @@ export const PLATFORM_META: Record<string, PlatformMeta> = {
   //   accentClass: "bg-muted text-foreground",
   // },
 };
-export const SUPPORTED_PLATFORMS = ["YOUTUBE"];
+export const SUPPORTED_PLATFORMS = ["YOUTUBE", "INSTAGRAM"];
 // export const SUPPORTED_PLATFORMS = ["YOUTUBE", "FACEBOOK", "INSTAGRAM", "THREADS", "TIKTOK"];
