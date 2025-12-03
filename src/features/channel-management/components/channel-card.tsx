@@ -39,7 +39,7 @@ export function ChannelCard({ connection, meta, locale, onConnect, connectLoadin
           <div>
             <CardTitle>{displayName}</CardTitle>
             <p className="text-xs text-muted-foreground">
-              {connection?.platform ?? t("status.disconnected")}
+              {t("status.connected") ?? t("status.disconnected")}
             </p>
           </div>
         </div>

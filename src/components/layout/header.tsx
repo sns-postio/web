@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { AuthService } from "@/features/auth/api/service";
 import { Button } from "@/components/ui/button";
@@ -27,6 +27,7 @@ type NavItem = {
 export function Header() {
   const locale = useLocale();
   const router = useRouter();
+  const pathname = usePathname();
   const homeTranslations = useTranslations("home");
   const navTranslations = useTranslations("home.header");
   const userMenuTranslations = useTranslations("auth.userMenu");
@@ -86,14 +87,25 @@ export function Header() {
           <span className="text-xl font-bold">{homeTranslations("brand")}</span>
         </Link>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-6">
           {navItems.length > 0 && (
-            <nav className="hidden md:flex items-center gap-4 text-sm text-muted-foreground">
-              {navItems.map((item) => (
-                <Link key={item.key} href={item.href} className="transition-colors hover:text-foreground">
-                  {item.label}
-                </Link>
-              ))}
+            <nav className="hidden md:flex items-center gap-3 text-sm font-bold">
+              {navItems.map((item) => {
+                const isActive = pathname?.startsWith(item.href);
+                return (
+                  <Link
+                    key={item.key}
+                    href={item.href}
+                    className={`rounded-md px-3 py-1 transition-colors ${
+                      isActive
+                        ? "bg-muted text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </nav>
           )}
 
