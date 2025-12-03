@@ -1,7 +1,7 @@
 "use client";
 
 import { useYoutubeConnect } from "@/features/youtube/hooks/useYoutubeConnect";
-import { useUserConnections } from "@/features/youtube/hooks/useUserConnections";
+import { useUserConnections } from "@/features/channel-management/hooks/useUserConnections";
 import { useLocale } from "next-intl";
 import { useMemo } from "react";
 import { YoutubeStatusCard } from "@/features/youtube/components/youtube-status-card";

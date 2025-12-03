@@ -1,9 +1,3 @@
-// 연동된 플랫폼 항목
-export interface UserConnection {
-  id: number;
-  platform: string;
-}
-
 export interface YoutubePost {
   id: number;
   videoId: string;

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import type { UserConnection } from "../api/types";
+import type { UserConnection } from "@/features/channel-management/api/types";
 import { useYoutubeDisconnect } from "../hooks/useYoutubeDisconnect";
 
 interface YoutubeDisconnectCardProps {

@@ -2,20 +2,11 @@ import api from "@/lib/axios";
 import type { ApiResponse } from "@/lib/types/api";
 import { YOUTUBE_ENDPOINTS } from "./endpoint";
 import {
-  type UserConnection,
   type YoutubePostsPayload,
   type YoutubePostsParams,
   type YoutubeVideoPostRequest,
   type YoutubeCallbackRequest,
 } from "./types";
-
-/**
- * 연동된 플랫폼 목록 조회
- */
-export const fetchUserConnections = async (): Promise<ApiResponse<UserConnection[]>> => {
-  const res = await api.get<ApiResponse<UserConnection[]>>(YOUTUBE_ENDPOINTS.CONNECTIONS);
-  return res.data;
-};
 
 /*
  * 유튜브 게시글 목록 조회
