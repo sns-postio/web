@@ -5,12 +5,14 @@ import { useLocale, useTranslations } from "next-intl";
 import { ChannelCard } from "./channel-card";
 import { PLATFORM_META, SUPPORTED_PLATFORMS } from "./channel-data";
 import { useUserConnections } from "../hooks/useUserConnections";
+import { useYoutubeConnect } from "@/features/youtube/hooks/useYoutubeConnect";
 
 export function ChannelManagementSection() {
   const t = useTranslations("channelManagement");
   const commonT = useTranslations("common");
   const locale = useLocale();
   const { data: connections = [], isLoading, isError } = useUserConnections();
+  const { mutate: startYoutubeConnect, isPending: isYoutubeConnecting } = useYoutubeConnect();
 
   const mappedConnections = useMemo(() => {
     const connectionMap = new Map(connections.map((connection) => [connection.platform, connection]));
@@ -37,6 +39,8 @@ export function ChannelManagementSection() {
             connection={connection}
             meta={meta}
             locale={locale}
+            onConnect={!connection && platform === "YOUTUBE" ? () => startYoutubeConnect() : undefined}
+            connectLoading={platform === "YOUTUBE" ? isYoutubeConnecting : false}
           />
         ))}
       </div>

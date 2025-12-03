@@ -13,9 +13,11 @@ type ChannelCardProps = {
   connection?: UserConnection;
   meta?: PlatformMeta;
   locale: string;
+  onConnect?: () => void;
+  connectLoading?: boolean;
 };
 
-export function ChannelCard({ connection, meta, locale }: ChannelCardProps) {
+export function ChannelCard({ connection, meta, locale, onConnect, connectLoading }: ChannelCardProps) {
   const t = useTranslations("channelManagement");
   const isConnected = Boolean(connection);
   const statusLabel = isConnected ? t("status.connected") : t("status.disconnected");
@@ -67,18 +69,11 @@ export function ChannelCard({ connection, meta, locale }: ChannelCardProps) {
             </Button> */}
           </>
         ) : (
-          <Button className="w-full">{t("actions.connect")}</Button>
+          <Button className="w-full" onClick={onConnect} disabled={!onConnect || connectLoading}>
+            {connectLoading ? t("common.loading") : t("actions.connect")}
+          </Button>
         )}
       </CardFooter>
     </Card>
-  );
-}
-
-function InfoRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-center justify-between text-sm">
-      <span className="text-muted-foreground">{label}</span>
-      <span className="font-medium">{value}</span>
-    </div>
   );
 }
