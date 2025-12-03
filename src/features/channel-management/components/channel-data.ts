@@ -31,6 +31,7 @@ export const PLATFORM_META: Record<string, PlatformMeta> = {
     descriptionKey: "instagram",
     icon: Instagram,
     accentClass: "bg-pink-500/10 text-pink-600",
+    pageHref: "/instagram",
   },
   // THREADS: {
   //   name: "Threads",

@@ -26,7 +26,7 @@ export function SocialCallbackContent({ namespace, redirectPath, delayMs = 1500 
   }, [locale, redirectPath, router, delayMs]);
 
   return (
-    <div className="mx-auto flex max-w-lg flex-col gap-6">
+    <div className="mx-auto flex max-w-lg flex-col gap-6 px-4 py-12 lg:py-16">
       <Card>
         <CardHeader>
           <CardTitle>{t("successTitle")}</CardTitle>
