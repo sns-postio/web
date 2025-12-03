@@ -1,3 +1,4 @@
+// app/[locale]/youtube/page.tsx
 "use client";
 
 import { useYoutubeConnect } from "@/features/youtube/hooks/useYoutubeConnect";

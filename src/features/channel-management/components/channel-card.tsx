@@ -5,36 +5,40 @@ import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import type { ChannelCardConfig, ChannelStatus } from "./channel-data";
+import type { PlatformMeta } from "./channel-data";
+import type { UserConnection } from "@/features/channel-management/api/types";
+import { PlaySquare } from "lucide-react";
 
 type ChannelCardProps = {
-  channel: ChannelCardConfig;
-  status: ChannelStatus;
+  connection?: UserConnection;
+  meta?: PlatformMeta;
   locale: string;
 };
 
-export function ChannelCard({ channel, status, locale }: ChannelCardProps) {
+export function ChannelCard({ connection, meta, locale }: ChannelCardProps) {
   const t = useTranslations("channelManagement");
-  const isConnected = status === "connected";
+  const isConnected = Boolean(connection);
   const statusLabel = isConnected ? t("status.connected") : t("status.disconnected");
-  const description = t(`platformDescriptions.${channel.descriptionKey}`);
-  const pageHref = channel.pageHref ? `/${locale}${channel.pageHref}` : "#";
-  const analyticsHref = channel.analyticsHref ? `/${locale}${channel.analyticsHref}` : "#";
-
-  const accountIdValue = isConnected ? channel.handle ?? "-" : "-";
-  const connectedAtValue = isConnected ? channel.connectedAt ?? "-" : "-";
-  const lastSyncedValue = isConnected ? channel.lastSynced ?? "-" : "-";
+  const displayName = meta?.name ?? connection?.platform ?? "Channel";
+  const Icon = meta?.icon ?? PlaySquare;
+  const accentClass = meta?.accentClass ?? "bg-muted text-foreground";
+  const descriptionKey = meta?.descriptionKey;
+  const description = descriptionKey ? t(`platformDescriptions.${descriptionKey}`) : statusLabel;
+  const pageHref = meta?.pageHref ? `/${locale}${meta.pageHref}` : "#";
+  const analyticsHref = meta?.analyticsHref ? `/${locale}${meta.analyticsHref}` : "#";
 
   return (
     <Card className="flex h-full flex-col">
       <CardHeader className="flex flex-row items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className={`flex h-12 w-12 items-center justify-center rounded-full ${channel.accentClass}`}>
-            <channel.icon className="h-5 w-5" />
+          <div className={`flex h-12 w-12 items-center justify-center rounded-full ${accentClass}`}>
+            <Icon className="h-5 w-5" />
           </div>
           <div>
-            <CardTitle>{channel.name}</CardTitle>
-            <p className="text-xs text-muted-foreground">{channel.handle ?? statusLabel}</p>
+            <CardTitle>{displayName}</CardTitle>
+            <p className="text-xs text-muted-foreground">
+              {connection?.platform ?? t("status.disconnected")}
+            </p>
           </div>
         </div>
         <Badge
@@ -49,9 +53,6 @@ export function ChannelCard({ channel, status, locale }: ChannelCardProps) {
       </CardHeader>
 
       <CardContent className="space-y-3 text-sm">
-        <InfoRow label={t("labels.accountId")} value={accountIdValue} />
-        <InfoRow label={t("labels.connectedAt")} value={connectedAtValue} />
-        <InfoRow label={t("labels.lastSynced")} value={lastSyncedValue} />
         <p className="text-xs text-muted-foreground">{description}</p>
       </CardContent>
 

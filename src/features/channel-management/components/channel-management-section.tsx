@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { ChannelCard } from "./channel-card";
-import { channelCards, ChannelStatus } from "./channel-data";
+import { PLATFORM_META, SUPPORTED_PLATFORMS } from "./channel-data";
 import { useUserConnections } from "../hooks/useUserConnections";
 
 export function ChannelManagementSection() {
@@ -12,21 +12,14 @@ export function ChannelManagementSection() {
   const locale = useLocale();
   const { data: connections = [], isLoading, isError } = useUserConnections();
 
-  const cardsWithStatus = useMemo(() => {
-    if (isLoading || isError) {
-      return channelCards.map((card) => ({
-        card,
-        status: card.defaultStatus ?? "disconnected",
-      }));
-    }
-
-    const connectedPlatforms = new Set(connections.map((connection) => connection.platform));
-
-    return channelCards.map((card) => ({
-      card,
-      status: connectedPlatforms.has(card.platformKey) ? ("connected" as ChannelStatus) : "disconnected",
+  const mappedConnections = useMemo(() => {
+    const connectionMap = new Map(connections.map((connection) => [connection.platform, connection]));
+    return SUPPORTED_PLATFORMS.map((platform) => ({
+      platform,
+      connection: connectionMap.get(platform),
+      meta: PLATFORM_META[platform],
     }));
-  }, [connections, isError, isLoading]);
+  }, [connections]);
 
   return (
     <section className="container mx-auto px-4 py-12 lg:py-16">
@@ -38,8 +31,13 @@ export function ChannelManagementSection() {
       </div>
 
       <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {cardsWithStatus.map(({ card, status }) => (
-          <ChannelCard key={card.id} channel={card} status={status} locale={locale} />
+        {mappedConnections.map(({ platform, connection, meta }) => (
+          <ChannelCard
+            key={platform}
+            connection={connection}
+            meta={meta}
+            locale={locale}
+          />
         ))}
       </div>
     </section>
