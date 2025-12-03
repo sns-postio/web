@@ -341,7 +341,25 @@
       "disconnectSuccessTitle": "Instagram 연동이 해제되었습니다",
       "disconnectSuccessDescription": "선택한 계정 연동을 끊었어요.",
       "disconnectErrorTitle": "Instagram을 해제하지 못했어요",
-      "disconnectErrorDescription": "새로고침 후 다시 시도해 주세요."
+      "disconnectErrorDescription": "새로고침 후 다시 시도해 주세요.",
+      "postsErrorTitle": "Instagram 게시물을 불러오지 못했어요",
+      "postsErrorDescription": "잠시 후 다시 시도해 주세요."
+    },
+    "postsCard": {
+      "title": "Instagram 게시물",
+      "error": "게시물을 불러오지 못했습니다.",
+      "noCaption": "설명이 없습니다."
+    },
+    "page": {
+      "title": "Instagram 게시물 보기",
+      "description": "연동된 계정을 선택해 최신 게시물을 확인하세요.",
+      "selectPlaceholder": "연결된 Instagram 계정을 선택하세요",
+      "empty": "연결된 Instagram 계정이 없습니다.",
+      "loadError": "Instagram 계정을 불러오지 못했습니다.",
+      "connectButton": "Instagram 연동하기",
+      "connecting": "연동 중...",
+      "connectedStatus": "총 {count}개의 Instagram 계정이 연결되어 있습니다.",
+      "refresh": "새로고침"
     }
   },
   "deploy": {

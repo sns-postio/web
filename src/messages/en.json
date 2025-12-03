@@ -341,7 +341,25 @@
       "disconnectSuccessTitle": "Instagram connection removed",
       "disconnectSuccessDescription": "The selected account has been disconnected.",
       "disconnectErrorTitle": "Unable to disconnect Instagram",
-      "disconnectErrorDescription": "Please refresh and try again."
+      "disconnectErrorDescription": "Please refresh and try again.",
+      "postsErrorTitle": "Unable to load Instagram posts",
+      "postsErrorDescription": "Please try again shortly."
+    },
+    "postsCard": {
+      "title": "Instagram Posts",
+      "error": "Couldn't load the latest posts.",
+      "noCaption": "No caption"
+    },
+    "page": {
+      "title": "Instagram Posts",
+      "description": "Pick a linked account to view the latest posts.",
+      "selectPlaceholder": "Select an Instagram connection",
+      "empty": "No Instagram connections found.",
+      "loadError": "Unable to load Instagram connections.",
+      "connectButton": "Connect Instagram",
+      "connecting": "Connecting...",
+      "connectedStatus": "{count} Instagram account(s) connected.",
+      "refresh": "Refresh"
     }
   },
   "deploy": {

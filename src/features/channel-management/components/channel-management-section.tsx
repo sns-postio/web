@@ -52,14 +52,15 @@ export function ChannelManagementSection() {
                 : false;
 
           return (
-          <ChannelCard
-            key={platform}
-            connection={connection}
-            meta={meta}
-            locale={locale}
-            onConnect={!connection ? handleConnect : undefined}
-            connectLoading={!connection ? isConnecting : false}
-          />
+            <ChannelCard
+              key={platform}
+              connection={connection}
+              meta={meta}
+              locale={locale}
+              onConnect={!connection ? handleConnect : undefined}
+              connectLoading={!connection ? isConnecting : false}
+            />
+          );
         })}
       </div>
     </section>
