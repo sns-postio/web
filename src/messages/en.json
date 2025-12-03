@@ -334,6 +334,10 @@
       "successTitle": "Instagram account connected",
       "successDescription": "You can now manage Instagram inside Postio.",
       "redirecting": "Redirecting you to the Instagram page..."
+    },
+    "messages": {
+      "redirectErrorTitle": "Unable to start Instagram connection",
+      "redirectErrorDescription": "Please try again in a moment."
     }
   },
   "deploy": {
