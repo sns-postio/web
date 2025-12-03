@@ -25,7 +25,7 @@ export function ChannelCard({ connection, meta, locale }: ChannelCardProps) {
   const descriptionKey = meta?.descriptionKey;
   const description = descriptionKey ? t(`platformDescriptions.${descriptionKey}`) : statusLabel;
   const pageHref = meta?.pageHref ? `/${locale}${meta.pageHref}` : "#";
-  const analyticsHref = meta?.analyticsHref ? `/${locale}${meta.analyticsHref}` : "#";
+  // const analyticsHref = meta?.analyticsHref ? `/${locale}${meta.analyticsHref}` : "#";
 
   return (
     <Card className="flex h-full flex-col">
@@ -62,9 +62,9 @@ export function ChannelCard({ connection, meta, locale }: ChannelCardProps) {
             <Button asChild variant="outline" className="flex-1">
               <Link href={pageHref}>{t("actions.openPage")}</Link>
             </Button>
-            <Button asChild className="flex-1">
+            {/* <Button asChild className="flex-1">
               <Link href={analyticsHref}>{t("actions.viewAnalytics")}</Link>
-            </Button>
+            </Button> */}
           </>
         ) : (
           <Button className="w-full">{t("actions.connect")}</Button>

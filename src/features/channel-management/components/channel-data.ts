@@ -20,30 +20,30 @@ export const PLATFORM_META: Record<string, PlatformMeta> = {
     pageHref: "/youtube",
     analyticsHref: "/youtube/videos",
   },
-  FACEBOOK: {
-    name: "Facebook",
-    descriptionKey: "facebook",
-    icon: Facebook,
-    accentClass: "bg-blue-500/10 text-blue-600",
-  },
-  INSTAGRAM: {
-    name: "Instagram",
-    descriptionKey: "instagram",
-    icon: Instagram,
-    accentClass: "bg-pink-500/10 text-pink-600",
-  },
-  THREADS: {
-    name: "Threads",
-    descriptionKey: "threads",
-    icon: AtSign,
-    accentClass: "bg-muted text-foreground",
-  },
-  TIKTOK: {
-    name: "TikTok",
-    descriptionKey: "tiktok",
-    icon: Music3,
-    accentClass: "bg-muted text-foreground",
-  },
+  // FACEBOOK: {
+  //   name: "Facebook",
+  //   descriptionKey: "facebook",
+  //   icon: Facebook,
+  //   accentClass: "bg-blue-500/10 text-blue-600",
+  // },
+  // INSTAGRAM: {
+  //   name: "Instagram",
+  //   descriptionKey: "instagram",
+  //   icon: Instagram,
+  //   accentClass: "bg-pink-500/10 text-pink-600",
+  // },
+  // THREADS: {
+  //   name: "Threads",
+  //   descriptionKey: "threads",
+  //   icon: AtSign,
+  //   accentClass: "bg-muted text-foreground",
+  // },
+  // TIKTOK: {
+  //   name: "TikTok",
+  //   descriptionKey: "tiktok",
+  //   icon: Music3,
+  //   accentClass: "bg-muted text-foreground",
+  // },
 };
-
-export const SUPPORTED_PLATFORMS = ["YOUTUBE", "FACEBOOK", "INSTAGRAM", "THREADS", "TIKTOK"];
+export const SUPPORTED_PLATFORMS = ["YOUTUBE"];
+// export const SUPPORTED_PLATFORMS = ["YOUTUBE", "FACEBOOK", "INSTAGRAM", "THREADS", "TIKTOK"];
