@@ -48,7 +48,7 @@ export function Header() {
         label: navTranslations("channelManagement"),
         href: `/${locale}/channel-management`,
       },
-      { key: "myPage", label: navTranslations("myPage"), href: `/${locale}/youtube` }
+      // { key: "myPage", label: navTranslations("myPage"), href: `/${locale}/mypage` }
     );
   }
 
@@ -86,32 +86,36 @@ export function Header() {
           <span className="text-xl font-bold">{homeTranslations("brand")}</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-          {navItems.map((item) => (
-            <Link key={item.key} href={item.href} className="transition-colors hover:text-foreground">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-2">
-          {isAuthenticated ? (
-            <UserDropdown
-              user={user}
-              isLoggingOut={isLoggingOut}
-              onLogout={handleLogout}
-              onPasswordReset={handlePasswordReset}
-            />
-          ) : (
-            <>
-              <Link href={`/${locale}/auth/login`}>
-                <Button variant="ghost">{homeTranslations("login")}</Button>
-              </Link>
-              <Link href={`/${locale}/auth/signup`}>
-                <Button>{homeTranslations("start")}</Button>
-              </Link>
-            </>
+        <div className="flex items-center gap-3">
+          {navItems.length > 0 && (
+            <nav className="hidden md:flex items-center gap-4 text-sm text-muted-foreground">
+              {navItems.map((item) => (
+                <Link key={item.key} href={item.href} className="transition-colors hover:text-foreground">
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
           )}
+
+          <div className="flex items-center gap-2">
+            {isAuthenticated ? (
+              <UserDropdown
+                user={user}
+                isLoggingOut={isLoggingOut}
+                onLogout={handleLogout}
+                onPasswordReset={handlePasswordReset}
+              />
+            ) : (
+              <>
+                <Link href={`/${locale}/auth/login`}>
+                  <Button variant="ghost">{homeTranslations("login")}</Button>
+                </Link>
+                <Link href={`/${locale}/auth/signup`}>
+                  <Button>{homeTranslations("start")}</Button>
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </header>
