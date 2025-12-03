@@ -329,6 +329,13 @@
       "uploadError": "Please check the form and try again."
     }
   },
+  "instagram": {
+    "callbackPage": {
+      "successTitle": "Instagram account connected",
+      "successDescription": "You can now manage Instagram inside Postio.",
+      "redirecting": "Redirecting you to the Instagram page..."
+    }
+  },
   "deploy": {
     "title": "Deploy",
     "description": "Manage and deploy your posts",
