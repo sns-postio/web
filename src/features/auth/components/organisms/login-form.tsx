@@ -28,7 +28,7 @@ export function LoginForm() {
       { identifier: email, password },
       {
         onSuccess: (res) => {
-          if (res.success) router.push(`/${locale}/youtube`);
+          if (res.success) router.push(`/${locale}/channel-management`);
           else setError(res.message);
         },
         onError: (error) => {
