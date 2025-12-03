@@ -337,7 +337,11 @@
     },
     "messages": {
       "redirectErrorTitle": "Unable to start Instagram connection",
-      "redirectErrorDescription": "Please try again in a moment."
+      "redirectErrorDescription": "Please try again in a moment.",
+      "disconnectSuccessTitle": "Instagram connection removed",
+      "disconnectSuccessDescription": "The selected account has been disconnected.",
+      "disconnectErrorTitle": "Unable to disconnect Instagram",
+      "disconnectErrorDescription": "Please refresh and try again."
     }
   },
   "deploy": {
