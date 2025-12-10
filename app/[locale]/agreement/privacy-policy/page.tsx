@@ -73,6 +73,27 @@ function KoreanPrivacy() {
       <ul className="list-disc pl-5 space-y-1">
         <li>회원가입/로그인: 이메일 주소, 비밀번호</li>
         <li>
+          유료 서비스 결제 시:
+          <p>
+            - 결제 수단 정보: 카드사명, 카드번호 일부(일부 결제 수단에 한함), 휴대폰 번호, 통신사
+            정보, 계좌 이체 정보 등
+          </p>
+          <p>- 결제 승인 정보: 결제 금액, 거래 일시, 승인번호</p>
+          <p>- 결제/정기결제 운영 정보: 결제 ID, 결제용 토큰(빌링키), 구독 상태, 갱신/해지 기록</p>
+        </li>
+        <li>
+          금융정보 직접 저장 불가 안내:
+          <p>
+            ※ 회사는 신용카드 번호 전체, 유효기간, CVC/CVV, 은행 계좌번호 등 결제 관련 민감한
+            금융정보를 직접 저장하지 않습니다.
+          </p>
+          <p>
+            모든 결제는 결제대행사(PG사)의 암호화된 시스템을 통해 처리되며, 회사는 PG사가 제공하는
+            결제 승인 정보, 거래 ID, 결제용 토큰(빌링키) 등 서비스 운영에 필요한 최소한의 정보만
+            보관합니다.
+          </p>
+        </li>
+        <li>
           SNS API 연동:
           <p>- 프로필 정보: 사용자 ID, 계정명, 프로필 이미지, 액세스 토큰</p>
           <p>- 콘텐츠/데이터: 게시글, 동영상, 이미지, 댓글</p>
@@ -84,6 +105,8 @@ function KoreanPrivacy() {
       <p className="mt-6 mb-4 text-[15px] font-semibold">3. 개인정보 이용 목적</p>
       <ul className="list-disc pl-5 space-y-1">
         <li>회원 식별 및 계정 관리</li>
+        <li>유료 서비스 제공에 따른 요금 정산, 결제 및 환불 처리</li>
+        <li>구매/결제 기록 및 증빙 자료 보관 (세법 및 전자상거래법 준수)</li>
         <li>SNS 통합 관리 기능 제공</li>
         <li>분석 및 인사이트 제공</li>
         <li>서비스 운영 및 고객 지원</li>
@@ -92,32 +115,36 @@ function KoreanPrivacy() {
       </ul>
 
       <p className="mt-6 mb-4 text-[15px] font-semibold">4. 보관 및 파기</p>
+      <p>회원 탈퇴 또는 목적 달성 시 지체 없이 파기합니다.</p>
+      <p>이용자는 다음과 같은 권리를 행사할 수 있습니다:</p>
       <ul className="list-disc pl-5 space-y-1">
-        <li>
-          회원 탈퇴 또는 목적 달성 시 지체 없이 파기합니다.
-          <p>- 개인정보 열람요구</p>
-          <p>- 오류 등이 있을 경우 정정 요구</p>
-          <p>- 삭제요구</p>
-          <p>- 처리정지 요구</p>
-        </li>
-        <li>
-          법령에 따라 일정 기간 보관할 수 있습니다.
-          <p>- 계약/청약철회 기록: 5년</p>
-          <p>- 결제/재화 공급 기록: 5년</p>
-          <p>- 소비자 불만/분쟁 기록: 3년</p>
-          <p>- 접속 로그: 3개월</p>
-        </li>
-        <li>
-          단, 회사는 서비스 개선 및 통계·분석 목적으로{" "}
-          <b>개인 식별이 불가능하도록 가명처리·익명처리한 데이터</b>는 회원 탈퇴 이후에도
-          보관·활용할 수 있습니다.
-        </li>
+        <li>개인정보 열람요구</li>
+        <li>오류 등의 정정 요구</li>
+        <li>삭제 요구</li>
+        <li>처리정지 요구</li>
       </ul>
+      <p>법령에 따라 일정 기간 보관할 수 있습니다.</p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>계약/청약철회 기록: 5년</li>
+        <li>결제/재화 공급 기록: 5년</li>
+        <li>소비자 불만/분쟁 기록: 3년</li>
+        <li>접속 로그: 3개월</li>
+      </ul>
+      <p>전자금융거래법 준수 안내:</p>
+      <p>
+        회사는 전자금융거래법에 따라 <strong>결제·거래 기록을 5년간 보관</strong>하며, 이용자는 해당
+        기록의 열람을 요청할 수 있습니다.
+      </p>
+      <p>
+        ※ 단, 단, 회사는 서비스 개선 및 통계·분석 목적으로 개인 식별이 불가능한 가명·익명 정보는
+        회원 탈퇴 이후에도 보관·활용할 수 있습니다.
+      </p>
 
       <p className="mt-6 mb-4 text-[15px] font-semibold">5. 개인정보 처리 위탁</p>
       <p>회사는 서비스 운영을 위해 다음과 같이 개인정보 처리를 위탁할 수 있습니다.</p>
       <ul className="list-disc pl-5 space-y-1">
         <li>클라우드 인프라 (AWS, Azure, GCP) → 데이터 보관/시스템 운영</li>
+        <li>결제대행사(PG사) – PayPal: 신용카드·계좌이체 등 결제 처리, 승인 및 정기 결제 운영</li>
         <li>메시지 발송 서비스 → 이메일, 푸시 알림 발송</li>
         <li>데이터 분석 서비스 → 서비스 이용 패턴 분석</li>
       </ul>
@@ -125,11 +152,25 @@ function KoreanPrivacy() {
       <p className="mt-6 mb-4 text-[15px] font-semibold">6. 개인정보 국외 이전</p>
       <p>개인정보는 글로벌 클라우드 서버(미국, 일본, 싱가포르 등)에 이전될 수 있습니다.</p>
       <ul className="list-disc pl-5 space-y-1">
-        <li>이전 항목: 계정 정보, 서비스 로그, 연동된 SNS 데이터</li>
+        <li>
+          이전 항목: 계정 정보, 서비스 로그, 연동된 SNS 데이터,{" "}
+          <strong>결제 승인 정보(결제 시스템 위탁 시)</strong>
+        </li>
         <li>이전 국가: 미국, 일본, 싱가포르</li>
-        <li>이전 방법: 암호화 통신(SSL/TLS)을 통한 전송</li>
+        <li>이전 방법: SSL/TLS 기반 암호화 통신</li>
         <li>이전 목적: 데이터 보관 및 운영</li>
-        <li>수탁업체: AWS, Microsoft, Google 등</li>
+      </ul>
+      <p>
+        <strong>
+          또한 유료 서비스 결제 제공을 위해 아래와 같이 개인정보가 국외로 이전될 수 있습니다.
+        </strong>
+      </p>
+
+      <p className="mt-5 text-[14px] font-semibold">▸ PayPal Holdings, Inc. (미국)</p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>이전 항목: 결제 승인 정보, 거래 ID, 이메일, IP, 결제 토큰 등</li>
+        <li>이전 목적: 결제 처리 및 정기결제 운영</li>
+        <li>이전 방법: SSL/TLS 암호화 전송</li>
       </ul>
 
       <p className="mt-6 mb-4 text-[15px] font-semibold">7. 쿠키 및 추적 기술</p>
@@ -142,15 +183,29 @@ function KoreanPrivacy() {
       <p className="mt-6 mb-4 text-[15px] font-semibold">8. 개인정보 보호 조치</p>
       <ul className="list-disc pl-5 space-y-1">
         <li>비밀번호 암호화 저장</li>
-        <li>SSL/TLS 암호화 통신</li>
+        <li>SSL/TLS 암호화 통신 적용</li>
         <li>접근 권한 최소화</li>
-        <li>정기 보안 점검 및 임직원 보안 교육</li>
+        <li>정기적인 보안 점검</li>
+        <li>임직원 보안 교육 강화</li>
       </ul>
 
       <p className="mt-6 mb-4 text-[15px] font-semibold">9. 이용자의 권리</p>
       <p>이용자는 언제든 개인정보 열람, 정정, 삭제, 처리 정지, 회원 탈퇴를 요청할 수 있습니다.</p>
+
+      <p className="mt-5 mb-5">
+        <strong>유료 서비스 이용자는 결제 및 구매 내역 열람·정정을 요청할 수 있습니다.</strong>
+      </p>
+
+      <p className="text-[14px] font-semibold">정기결제(구독 서비스) 이용자의 추가 권리</p>
+      <p>
+        이용자는 구독 서비스의 자동 갱신을 원하지 않을 경우
+        <strong>서비스 내 ‘구독 해지’ 기능</strong>을 통해 언제든지 자동결제를 중단할 수 있습니다.
+      </p>
       <ul className="list-disc pl-5 space-y-1">
-        <li>EU 이용자(GDPR): 열람권, 삭제권, 이동권, 처리 제한권, 자동화된 의사결정 거부권 보장</li>
+        <li>해지 요청 시 즉시 처리됩니다.</li>
+        <li>다음 결제일부터 자동결제가 진행되지 않습니다.</li>
+        <li>이미 결제된 금액의 환불은 관련 법령 및 회사 환불 정책에 따라 처리됩니다.</li>
+        <li>EU 이용자(GDPR): 열람권, 삭제권, 이동권, 처리 제한권 등 보장</li>
         <li>미국 캘리포니아 이용자(CCPA): 개인정보 판매 거부권, 열람·삭제 요청권 보장</li>
       </ul>
 
@@ -159,25 +214,13 @@ function KoreanPrivacy() {
       <p>다만 법령에 따라 수사기관이나 법원의 요청이 있는 경우 예외적으로 제공할 수 있습니다.</p>
 
       <p className="mt-6 mb-4 text-[15px] font-semibold">11. 준거법 및 관할권</p>
-      <ul className="list-disc pl-5 space-y-1">
-        <li>본 방침은 대한민국 법률을 우선 적용합니다.</li>
-        <li>
-          다만 해외 이용자에게는 해당 지역의 법률(GDPR, CCPA 등)에 따른 추가 권리가 보장됩니다.
-        </li>
-        <li>분쟁 발생 시 회사 본사 소재지를 관할하는 법원을 제1심 관할 법원으로 합니다.</li>
-      </ul>
+      <p>본 방침은 대한민국 법률을 우선 적용합니다.</p>
+      <p>해외 이용자에게는 해당 지역의 법률(GDPR, CCPA 등)에 따른 추가 권리가 보장됩니다.</p>
+      <p>분쟁 발생 시 회사 본사 소재지를 관할하는 법원을 제1심 관할 법원으로 합니다.</p>
 
       <p className="mt-6 mb-4 text-[15px] font-semibold">12. 개인정보 처리방침의 변경 및 고지</p>
-      <ul className="list-disc pl-5 space-y-1">
-        <li>
-          개인정보 처리방침은 정부의 정책 및 법령 또는 회사의 방침 변경에 따라 내용의 추가, 삭제 및
-          수정이 있을 수 있습니다.
-        </li>
-        <li>
-          개인정보 처리방침을 변경하는 경우 회사는 홈페이지를 통해 공지하고, 정보주체가 언제든지
-          변경된 사항을 쉽게 알아볼 수 있도록 조치하겠습니다.
-        </li>
-      </ul>
+      <p>회사는 법령 개정 또는 서비스 정책 변경 시 개인정보 처리방침을 수정할 수 있습니다.</p>
+      <p>개정 시 홈페이지 공지를 통해 이용자가 변경 내용을 쉽게 확인할 수 있도록 안내합니다.</p>
 
       <p className="mt-6 mb-4 text-[15px] font-semibold">13. 개인정보 보호 책임자</p>
       <table className="w-full border border-neutral-300 text-[13px]">
