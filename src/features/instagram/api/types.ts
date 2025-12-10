@@ -22,3 +22,20 @@ export interface InstagramPostsParams {
   page?: number;
   limit?: number;
 }
+
+export interface InstagramFeedUploadRequest {
+  connectId: string;
+  caption?: string;
+  files: File[];
+}
+
+export interface InstagramReelUploadRequest {
+  connectId: string;
+  caption?: string;
+  file: File;
+}
+
+export interface InstagramStoryUploadRequest {
+  connectId: string;
+  file: File;
+}

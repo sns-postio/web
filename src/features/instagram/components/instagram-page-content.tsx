@@ -8,6 +8,7 @@ import { InstagramPostsCard } from "@/features/instagram/components/instagram-po
 import { InstagramDisconnectCard } from "@/features/instagram/components/instagram-disconnect-card";
 import { InstagramGuideCard } from "@/features/instagram/components/instagram-guide-card";
 import { useInstagramConnect } from "@/features/instagram/hooks/useInstagramConnect";
+import { InstagramUploadCard } from "@/features/instagram/components/instagram-upload-card";
 
 export function InstagramPageContent() {
   const t = useTranslations("instagram.page");
@@ -33,6 +34,7 @@ export function InstagramPageContent() {
 
       {isConnected && (
         <>
+          <InstagramUploadCard connections={instagramConnections} />
           <InstagramPostsCard connections={instagramConnections} />
           <InstagramDisconnectCard connections={instagramConnections} />
         </>

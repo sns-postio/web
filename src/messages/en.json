@@ -343,7 +343,42 @@
       "disconnectErrorTitle": "Unable to disconnect Instagram",
       "disconnectErrorDescription": "Please refresh and try again.",
       "postsErrorTitle": "Unable to load Instagram posts",
-      "postsErrorDescription": "Please try again shortly."
+      "postsErrorDescription": "Please try again shortly.",
+      "uploadSuccessTitle": "{target} upload requested",
+      "uploadSuccessDescription": "We started uploading your {target}.",
+      "uploadErrorTitle": "Unable to upload {target}",
+      "uploadErrorDescription": "Please check the file and try again."
+    },
+    "uploadCard": {
+      "title": "Publish to Instagram",
+      "description": "Upload feed posts, reels, or stories without leaving Postio.",
+      "connectionLabel": "Instagram account",
+      "connectionHint": "Choose which connected account should publish the content.",
+      "noConnection": "Connect Instagram to publish new posts from Postio.",
+      "tabs": {
+        "feed": "Feed",
+        "reel": "Reel",
+        "story": "Story"
+      },
+      "feed": {
+        "captionLabel": "Caption",
+        "captionPlaceholder": "Write a caption for your feed post",
+        "filesLabel": "Media files",
+        "filesHint": "Upload one video or up to 10 images (max 8 MB each).",
+        "button": "Publish feed post"
+      },
+      "reel": {
+        "captionLabel": "Caption",
+        "captionPlaceholder": "Describe your reel",
+        "fileLabel": "Video file",
+        "fileHint": "Upload a single video up to 8 MB.",
+        "button": "Publish reel"
+      },
+      "story": {
+        "fileLabel": "Image or video",
+        "fileHint": "Upload one image or video up to 8 MB.",
+        "button": "Publish story"
+      }
     },
     "postsCard": {
       "title": "Instagram posts",

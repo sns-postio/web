@@ -343,7 +343,42 @@
       "disconnectErrorTitle": "Instagram을 해제하지 못했어요",
       "disconnectErrorDescription": "새로고침 후 다시 시도해 주세요.",
       "postsErrorTitle": "Instagram 게시물을 불러오지 못했어요",
-      "postsErrorDescription": "잠시 후 다시 시도해 주세요."
+      "postsErrorDescription": "잠시 후 다시 시도해 주세요.",
+      "uploadSuccessTitle": "{target} 업로드를 시작했어요",
+      "uploadSuccessDescription": "{target} 업로드를 진행 중입니다.",
+      "uploadErrorTitle": "{target} 업로드를 진행할 수 없어요",
+      "uploadErrorDescription": "파일을 확인한 뒤 다시 시도해 주세요."
+    },
+    "uploadCard": {
+      "title": "Instagram 업로드",
+      "description": "Postio에서 바로 피드·릴스·스토리를 업로드하세요.",
+      "connectionLabel": "Instagram 계정",
+      "connectionHint": "콘텐츠를 업로드할 연동 계정을 선택하세요.",
+      "noConnection": "Instagram을 연동하면 여기에서 새 콘텐츠를 업로드할 수 있어요.",
+      "tabs": {
+        "feed": "피드",
+        "reel": "릴스",
+        "story": "스토리"
+      },
+      "feed": {
+        "captionLabel": "캡션",
+        "captionPlaceholder": "피드 캡션을 입력하세요",
+        "filesLabel": "미디어 파일",
+        "filesHint": "동영상 1개 또는 최대 10개의 이미지를 업로드하세요. 파일당 8MB 이하만 가능합니다.",
+        "button": "피드 업로드"
+      },
+      "reel": {
+        "captionLabel": "캡션",
+        "captionPlaceholder": "릴스 설명을 입력하세요",
+        "fileLabel": "동영상 파일",
+        "fileHint": "동영상 1개만 업로드할 수 있으며 최대 8MB입니다.",
+        "button": "릴스 업로드"
+      },
+      "story": {
+        "fileLabel": "이미지 또는 동영상",
+        "fileHint": "이미지 1개 또는 동영상 1개를 업로드하세요. 최대 8MB입니다.",
+        "button": "스토리 업로드"
+      }
     },
     "postsCard": {
       "title": "Instagram 게시물",
