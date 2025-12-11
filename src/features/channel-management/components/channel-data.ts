@@ -39,12 +39,13 @@ export const PLATFORM_META: Record<string, PlatformMeta> = {
   //   icon: AtSign,
   //   accentClass: "bg-muted text-foreground",
   // },
-  // TIKTOK: {
-  //   name: "TikTok",
-  //   descriptionKey: "tiktok",
-  //   icon: Music3,
-  //   accentClass: "bg-muted text-foreground",
-  // },
+  TIKTOK: {
+    name: "TikTok",
+    descriptionKey: "tiktok",
+    icon: Music3,
+    accentClass: "bg-muted text-foreground",
+    pageHref: "/tiktok",
+  },
 };
-export const SUPPORTED_PLATFORMS = ["YOUTUBE", "INSTAGRAM"];
+export const SUPPORTED_PLATFORMS = ["YOUTUBE", "INSTAGRAM", "TIKTOK"];
 // export const SUPPORTED_PLATFORMS = ["YOUTUBE", "FACEBOOK", "INSTAGRAM", "THREADS", "TIKTOK"];

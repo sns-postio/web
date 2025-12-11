@@ -164,7 +164,8 @@
     "actions": {
       "openPage": "Open Page",
       "viewAnalytics": "View Analytics",
-      "connect": "Connect"
+      "connect": "Connect",
+      "disconnect": "Disconnect"
     },
     "platformDescriptions": {
       "youtube": "Schedule content and pull performance reports right away.",
@@ -448,6 +449,49 @@
         "line1": "Request a secure redirect URL from Postio.",
         "line2": "Approve the requested permissions on Meta's consent screen.",
         "line3": "Return to Postio so we can sync your Instagram account."
+      }
+    }
+  },
+  "tiktok": {
+    "callbackPage": {
+      "successTitle": "TikTok account connected",
+      "successDescription": "You can now manage TikTok inside Postio.",
+      "redirecting": "Redirecting you to the TikTok page..."
+    },
+    "messages": {
+      "redirectErrorTitle": "Unable to start TikTok connection",
+      "redirectErrorDescription": "Please try again in a moment.",
+      "disconnectSuccessTitle": "TikTok connection removed",
+      "disconnectSuccessDescription": "The selected TikTok account has been disconnected.",
+      "disconnectErrorTitle": "Unable to disconnect TikTok",
+      "disconnectErrorDescription": "Please refresh and try again."
+    },
+    "page": {
+      "title": "TikTok connection",
+      "description": "Connect TikTok to analyze and manage short-form performance in Postio.",
+      "loading": "Checking your TikTok connections...",
+      "status": {
+        "connected": "TikTok account connected",
+        "disconnected": "TikTok account not connected"
+      },
+      "statusDetail": {
+        "connected": "Posts and analytics are synced with your workspace.",
+        "disconnected": "Start the OAuth flow to link TikTok with Postio."
+      },
+      "cta": {
+        "connect": "Connect TikTok",
+        "reconnect": "Reconnect",
+        "retry": "Retry"
+      },
+      "error": {
+        "title": "Unable to load connection status",
+        "description": "Refresh the page or try again later."
+      },
+      "disconnect": {
+        "title": "Disconnect TikTok account",
+        "description": "Remove a linked TikTok account from Postio.",
+        "selectLabel": "Choose the account you want to disconnect",
+        "button": "Disconnect"
       }
     }
   },

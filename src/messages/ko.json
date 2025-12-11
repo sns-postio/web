@@ -164,7 +164,8 @@
     "actions": {
       "openPage": "페이지",
       "viewAnalytics": "분석 보기",
-      "connect": "연동하기"
+      "connect": "연동하기",
+      "disconnect": "연동 해제"
     },
     "platformDescriptions": {
       "youtube": "연동된 채널에서 예약 발행과 리포트를 바로 확인할 수 있습니다.",
@@ -448,6 +449,49 @@
         "line1": "Postio에서 안전한 리다이렉트 주소를 발급받습니다.",
         "line2": "Meta 인증 화면에서 요청된 권한을 승인합니다.",
         "line3": "Postio로 돌아오면 Instagram 계정 정보가 동기화됩니다."
+      }
+    }
+  },
+  "tiktok": {
+    "callbackPage": {
+      "successTitle": "TikTok 계정이 연결되었습니다",
+      "successDescription": "이제 Postio에서 TikTok을 관리할 수 있습니다.",
+      "redirecting": "곧 TikTok 페이지로 이동합니다..."
+    },
+    "messages": {
+      "redirectErrorTitle": "TikTok 연동을 시작할 수 없어요",
+      "redirectErrorDescription": "잠시 후 다시 시도해 주세요.",
+      "disconnectSuccessTitle": "TikTok 연동이 해제되었습니다",
+      "disconnectSuccessDescription": "선택한 TikTok 계정 연동을 끊었습니다.",
+      "disconnectErrorTitle": "TikTok 연동을 해제할 수 없어요",
+      "disconnectErrorDescription": "새로고침 후 다시 시도해 주세요."
+    },
+    "page": {
+      "title": "TikTok 연동",
+      "description": "TikTok을 연동해 숏폼 성과를 Postio에서 관리하세요.",
+      "loading": "TikTok 연동 상태를 확인하는 중입니다...",
+      "status": {
+        "connected": "TikTok 계정이 연동되었습니다",
+        "disconnected": "연동된 TikTok 계정이 없습니다"
+      },
+      "statusDetail": {
+        "connected": "게시물과 분석 데이터가 워크스페이스와 동기화되었습니다.",
+        "disconnected": "OAuth 절차를 시작해 TikTok을 Postio에 연결하세요."
+      },
+      "cta": {
+        "connect": "TikTok 연동하기",
+        "reconnect": "다시 연동",
+        "retry": "다시 시도"
+      },
+      "error": {
+        "title": "연동 상태를 불러오지 못했습니다",
+        "description": "페이지를 새로고침하거나 잠시 후 다시 시도해 주세요."
+      },
+      "disconnect": {
+        "title": "TikTok 연동 해제",
+        "description": "선택한 TikTok 계정 연동을 Postio에서 제거합니다.",
+        "selectLabel": "해제할 계정을 선택하세요",
+        "button": "연동 해제"
       }
     }
   },

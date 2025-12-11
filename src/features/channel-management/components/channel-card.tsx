@@ -19,6 +19,7 @@ type ChannelCardProps = {
 
 export function ChannelCard({ connection, meta, locale, onConnect, connectLoading }: ChannelCardProps) {
   const t = useTranslations("channelManagement");
+  const commonT = useTranslations("common");
   const isConnected = Boolean(connection);
   const statusLabel = isConnected ? t("status.connected") : t("status.disconnected");
   const displayName = meta?.name ?? connection?.platform ?? "Channel";
@@ -57,17 +58,14 @@ export function ChannelCard({ connection, meta, locale, onConnect, connectLoadin
 
       <CardFooter className="mt-auto gap-3">
         {isConnected ? (
-          <>
-            <Button asChild variant="outline" className="flex-1">
+          meta?.pageHref ? (
+            <Button asChild variant="outline" className="w-full">
               <Link href={pageHref}>{t("actions.openPage")}</Link>
             </Button>
-            {/* <Button asChild className="flex-1">
-              <Link href={analyticsHref}>{t("actions.viewAnalytics")}</Link>
-            </Button> */}
-          </>
+          ) : null
         ) : (
           <Button className="w-full" onClick={onConnect} disabled={!onConnect || connectLoading}>
-            {connectLoading ? t("common.loading") : t("actions.connect")}
+            {connectLoading ? commonT("loading") : t("actions.connect")}
           </Button>
         )}
       </CardFooter>

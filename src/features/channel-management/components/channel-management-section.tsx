@@ -7,6 +7,7 @@ import { PLATFORM_META, SUPPORTED_PLATFORMS } from "./channel-data";
 import { useUserConnections } from "../hooks/useUserConnections";
 import { useYoutubeConnect } from "@/features/youtube/hooks/useYoutubeConnect";
 import { useInstagramConnect } from "@/features/instagram/hooks/useInstagramConnect";
+import { useTiktokConnect } from "@/features/tiktok/hooks/useTiktokConnect";
 
 export function ChannelManagementSection() {
   const t = useTranslations("channelManagement");
@@ -15,6 +16,7 @@ export function ChannelManagementSection() {
   const { data: connections = [], isLoading, isError } = useUserConnections();
   const { mutate: startYoutubeConnect, isPending: isYoutubeConnecting } = useYoutubeConnect();
   const { mutate: startInstagramConnect, isPending: isInstagramConnecting } = useInstagramConnect();
+  const { mutate: startTiktokConnect, isPending: isTiktokConnecting } = useTiktokConnect();
 
   const mappedConnections = useMemo(() => {
     const connectionMap = new Map(connections.map((connection) => [connection.platform, connection]));
@@ -41,6 +43,8 @@ export function ChannelManagementSection() {
               startYoutubeConnect();
             } else if (platform === "INSTAGRAM") {
               startInstagramConnect();
+            } else if (platform === "TIKTOK") {
+              startTiktokConnect();
             }
           };
 
@@ -49,7 +53,9 @@ export function ChannelManagementSection() {
               ? isYoutubeConnecting
               : platform === "INSTAGRAM"
                 ? isInstagramConnecting
-                : false;
+                : platform === "TIKTOK"
+                  ? isTiktokConnecting
+                  : false;
 
           return (
             <ChannelCard
