@@ -492,6 +492,12 @@
         "description": "Remove a linked TikTok account from Postio.",
         "selectLabel": "Choose the account you want to disconnect",
         "button": "Disconnect"
+      },
+      "guide": {
+        "title": "How the TikTok connection works",
+        "line1": "Request a secure redirect URL from Postio.",
+        "line2": "Approve the requested permissions on TikTok's consent screen.",
+        "line3": "Return to Postio so we can sync your TikTok account."
       }
     }
   },

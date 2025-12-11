@@ -6,6 +6,7 @@ import { useUserConnections } from "@/features/channel-management/hooks/useUserC
 import { useTiktokConnect } from "@/features/tiktok/hooks/useTiktokConnect";
 import { TiktokStatusCard } from "./tiktok-status-card";
 import { TiktokDisconnectCard } from "./tiktok-disconnect-card";
+import { TiktokGuideCard } from "./tiktok-guide-card";
 
 export function TiktokPageContent() {
   const t = useTranslations("tiktok.page");
@@ -36,6 +37,8 @@ export function TiktokPageContent() {
           {t("statusDetail.disconnected")}
         </p>
       )}
+
+      <TiktokGuideCard />
     </div>
   );
 }

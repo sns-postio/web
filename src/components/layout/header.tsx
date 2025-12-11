@@ -89,24 +89,43 @@ export function Header() {
 
         <div className="flex items-center gap-6">
           {navItems.length > 0 && (
-            <nav className="hidden md:flex items-center gap-3 text-sm font-bold">
-              {navItems.map((item) => {
-                const isActive = pathname?.startsWith(item.href);
-                return (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    className={`rounded-md px-3 py-1 transition-colors ${
-                      isActive
-                        ? "bg-muted text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </nav>
+            <>
+              <nav className="hidden md:flex items-center gap-3 text-sm font-bold">
+                {navItems.map((item) => {
+                  const isActive = pathname?.startsWith(item.href);
+                  return (
+                    <Link
+                      key={item.key}
+                      href={item.href}
+                      className={`rounded-md px-3 py-1 transition-colors ${
+                        isActive
+                          ? "bg-muted text-foreground"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              <nav className="md:hidden">
+                {navItems.map((item) => {
+                  const isActive = pathname?.startsWith(item.href);
+                  return (
+                    <Link
+                      key={item.key}
+                      href={item.href}
+                      className={`inline-flex items-center rounded-md border px-3 py-1 text-sm font-semibold ${
+                        isActive ? "border-primary text-primary" : "text-muted-foreground"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </>
           )}
 
           <div className="flex items-center gap-2">
