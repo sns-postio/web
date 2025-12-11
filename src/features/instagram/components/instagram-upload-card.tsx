@@ -64,14 +64,17 @@ export function InstagramUploadCard({ connections }: InstagramUploadCardProps) {
     [connections]
   );
 
+  const feedCaptionValue = feedCaption.trim();
+  const reelCaptionValue = reelCaption.trim();
+
   const handleFeedSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!hasConnection || !feedFiles.length || isPublishingFeed) return;
+    if (!hasConnection || !feedFiles.length || !feedCaptionValue || isPublishingFeed) return;
 
     publishFeed(
       {
         connectId: selectedConnectId,
-        caption: feedCaption.trim(),
+        caption: feedCaptionValue,
         files: feedFiles,
       },
       {
@@ -88,11 +91,11 @@ export function InstagramUploadCard({ connections }: InstagramUploadCardProps) {
 
   const handleReelSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!hasConnection || !reelFile || isPublishingReel) return;
+    if (!hasConnection || !reelFile || !reelCaptionValue || isPublishingReel) return;
     publishReel(
       {
         connectId: selectedConnectId,
-        caption: reelCaption.trim(),
+        caption: reelCaptionValue,
         file: reelFile,
       },
       {
@@ -172,6 +175,7 @@ export function InstagramUploadCard({ connections }: InstagramUploadCardProps) {
                     value={feedCaption}
                     onChange={(event) => setFeedCaption(event.target.value)}
                     disabled={isPublishingFeed}
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -196,7 +200,7 @@ export function InstagramUploadCard({ connections }: InstagramUploadCardProps) {
                     </ul>
                   )}
                 </div>
-                <Button type="submit" disabled={!feedFiles.length || isPublishingFeed}>
+                <Button type="submit" disabled={!feedFiles.length || !feedCaptionValue || isPublishingFeed}>
                   {isPublishingFeed && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   {t("feed.button")}
                 </Button>
@@ -213,6 +217,7 @@ export function InstagramUploadCard({ connections }: InstagramUploadCardProps) {
                     value={reelCaption}
                     onChange={(event) => setReelCaption(event.target.value)}
                     disabled={isPublishingReel}
+                    required
                   />
                 </div>
                 <div className="space-y-2">
@@ -232,7 +237,7 @@ export function InstagramUploadCard({ connections }: InstagramUploadCardProps) {
                     </p>
                   )}
                 </div>
-                <Button type="submit" disabled={!reelFile || isPublishingReel}>
+                <Button type="submit" disabled={!reelFile || !reelCaptionValue || isPublishingReel}>
                   {isPublishingReel && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                   {t("reel.button")}
                 </Button>

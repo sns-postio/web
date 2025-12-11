@@ -25,13 +25,13 @@ export interface InstagramPostsParams {
 
 export interface InstagramFeedUploadRequest {
   connectId: string;
-  caption?: string;
+  caption: string;
   files: File[];
 }
 
 export interface InstagramReelUploadRequest {
   connectId: string;
-  caption?: string;
+  caption: string;
   file: File;
 }
 

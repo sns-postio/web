@@ -361,15 +361,15 @@
         "story": "스토리"
       },
       "feed": {
-        "captionLabel": "캡션",
-        "captionPlaceholder": "피드 캡션을 입력하세요",
+        "captionLabel": "첫 번째 댓글",
+        "captionPlaceholder": "피드와 함께 올라갈 첫 번째 댓글을 작성하세요",
         "filesLabel": "미디어 파일",
-        "filesHint": "동영상 1개 또는 최대 10개의 이미지를 업로드하세요. 파일당 8MB 이하만 가능합니다.",
+        "filesHint": "동영상 1개 또는 2 ~ 10개의 이미지를 업로드하세요. 파일당 8MB 이하만 가능합니다.",
         "button": "피드 업로드"
       },
       "reel": {
-        "captionLabel": "캡션",
-        "captionPlaceholder": "릴스 설명을 입력하세요",
+        "captionLabel": "첫 번째 댓글",
+        "captionPlaceholder": "릴스와 함께 올라갈 첫 번째 댓글을 작성하세요",
         "fileLabel": "동영상 파일",
         "fileHint": "동영상 1개만 업로드할 수 있으며 최대 8MB입니다.",
         "button": "릴스 업로드"

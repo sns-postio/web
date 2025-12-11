@@ -361,15 +361,15 @@
         "story": "Story"
       },
       "feed": {
-        "captionLabel": "Caption",
-        "captionPlaceholder": "Write a caption for your feed post",
+        "captionLabel": "First comment",
+        "captionPlaceholder": "Write the first comment that will be posted with your feed",
         "filesLabel": "Media files",
-        "filesHint": "Upload one video or up to 10 images (max 8 MB each).",
+        "filesHint": "Upload one video or 2 ~ 10 images (max 8 MB each).",
         "button": "Publish feed post"
       },
       "reel": {
-        "captionLabel": "Caption",
-        "captionPlaceholder": "Describe your reel",
+        "captionLabel": "First comment",
+        "captionPlaceholder": "Write the first comment that will be posted with your reel",
         "fileLabel": "Video file",
         "fileHint": "Upload a single video up to 8 MB.",
         "button": "Publish reel"

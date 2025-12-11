@@ -30,9 +30,7 @@ export const publishInstagramFeed = async (
 ): Promise<ApiResponse<null>> => {
   const formData = new FormData();
   formData.append("connectId", payload.connectId);
-  if (payload.caption) {
-    formData.append("caption", payload.caption);
-  }
+  formData.append("caption", payload.caption);
   payload.files.forEach((file) => {
     formData.append("files", file);
   });
@@ -45,9 +43,7 @@ export const publishInstagramReel = async (
 ): Promise<ApiResponse<null>> => {
   const formData = new FormData();
   formData.append("connectId", payload.connectId);
-  if (payload.caption) {
-    formData.append("caption", payload.caption);
-  }
+  formData.append("caption", payload.caption);
   formData.append("file", payload.file);
   const res = await api.post<ApiResponse<null>>(INSTAGRAM_ENDPOINTS.PUBLISH_REEL, formData);
   return res.data;
