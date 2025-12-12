@@ -15,7 +15,7 @@ export function TableSet({ columns, rows, className }: TableSetProps) {
   return (
     <div
       className={cn(
-        "w-full max-w-[1280px] border border-border rounded-md overflow-hidden",
+        "w-full  min-w-[1000px] max-w-[1280px] border border-border rounded-md overflow-hidden",
         className
       )}
     >

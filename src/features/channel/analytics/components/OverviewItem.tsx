@@ -1,18 +1,15 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
 
 interface OverviewItemProps {
   title: string;
-  value: string;
-  className?: string;
+  value: string | ReactNode;
 }
 
-export function OverviewItem({ title, value, className }: OverviewItemProps) {
+export function OverviewItem({ title, value }: OverviewItemProps) {
   return (
-    <div
-      className={cn("flex flex-col gap-1 px-4 py-4 rounded-xl bg-primary-foreground", className)}
-    >
+    <div className="flex flex-col flex-1 gap-1 px-4 py-4 rounded-xl bg-primary-foreground min-w-max">
       {/* Title */}
       <span className="text-sm text-muted-foreground">{title}</span>
 

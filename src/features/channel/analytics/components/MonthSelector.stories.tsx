@@ -1,7 +1,7 @@
 // eslint-disable-next-line storybook/no-renderer-packages
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { MonthSelector } from './MonthSelector';
+import { MonthSelector, MonthSelectorContent } from './MonthSelector';
 
 const sampleMonths = [
   { year: 2024, month: 9 },
@@ -27,13 +27,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    months: sampleMonths,
-  },
-};
-
-export const WithCallback: Story = {
-  args: {
-    onChange: (value) => console.log('Selected month:', value),
-  },
+  render: (args) => (
+    <MonthSelector {...args}>
+      {(args.months ?? []).map((month) => (
+        <MonthSelectorContent key={`${month.year}-${month.month}`} value={month}>
+          <div className="text-center">
+            {month.year}년 {month.month}월 데이터
+          </div>
+        </MonthSelectorContent>
+      ))}
+    </MonthSelector>
+  ),
 };

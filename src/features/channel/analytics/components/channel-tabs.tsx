@@ -9,47 +9,55 @@ import { cn } from "@/lib/utils";
 export interface TabItem {
   id: string;
   label: string;
-  isDisabled?: boolean;
 }
 
 export interface ChannelTabsProps {
   tabs: TabItem[];
   defaultTab?: string;
   onTabChange?: (tabId: string) => void;
-  className?: string;
 }
 
-export function ChannelTabs({ tabs, defaultTab, onTabChange, className }: ChannelTabsProps) {
+export function ChannelTabs({ tabs, defaultTab, onTabChange }: ChannelTabsProps) {
   const [activeTab, setActiveTab] = useState(defaultTab || tabs[0]?.id);
 
-  const handleTabClick = (tabId: string, disabled?: boolean) => {
-    if (disabled) return;
+  const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
     onTabChange?.(tabId);
   };
 
   return (
-    <div className="w-fit border-b border-border">
-      <div className={cn("flex items-center gap-[10px]", className)}>
-        {tabs.map((tab) => (
-          <button
+    <div className="flex flex-row w-fit min-w-max">
+      {tabs.map((tab) =>
+        activeTab === tab.id ? (
+          <div
             key={tab.id}
-            type="button"
-            onClick={() => handleTabClick(tab.id, tab.isDisabled)}
-            className={cn(
-              "relative h-10 px-4 text-base font-medium transition-colors",
-              tab.isDisabled && "cursor-not-allowed text-muted-foreground/60",
-              !tab.isDisabled &&
-                (activeTab === tab.id
-                  ? "text-foreground after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-primary"
-                  : "text-muted-foreground hover:text-foreground")
-            )}
-            disabled={tab.isDisabled}
+            className="flex items-center gap-[10px] py-2 px-4 border-b-2 border-primary text-foreground"
           >
-            {tab.label}
-          </button>
-        ))}
-      </div>
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => handleTabClick(tab.id)}
+              className="text-base font-medium leading-6 tracking-normal text-foreground cursor-pointer"
+            >
+              {tab.label}
+            </button>
+          </div>
+        ) : (
+          <div
+            key={tab.id}
+            className="flex items-center gap-[10px] py-2 px-4 border-b-2 border-muted text-muted-foreground hover:text-foreground"
+          >
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => handleTabClick(tab.id)}
+              className="text-base font-medium leading-6 tracking-normal text-muted-foreground hover:text-foreground cursor-pointer"
+            >
+              {tab.label}
+            </button>
+          </div>
+        )
+      )}
     </div>
   );
 }

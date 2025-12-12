@@ -164,7 +164,7 @@ const GNBBase = ({
   const primaryNavigation = buildPrimaryNavigation(gnbTranslations);
 
   return (
-    <header className="w-full h-[68px] border-b border-border px-6 py-4">
+    <header className="w-full border-b border-border px-6 md:px-32 py-4">
       <div className="flex items-center justify-between">
         <Link
           href={buildLocaleHref(locale, "/")}
