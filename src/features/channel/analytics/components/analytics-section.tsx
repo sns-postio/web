@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { ChannelTabs, CustomTabContent, type TabItem } from "./channel-tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { MonthSelector } from "./MonthSelector";
+
 
 type Metric = {
   key: string;
@@ -18,6 +20,12 @@ const MOCK_METRICS: Metric[] = [
   { key: "comments", label: "댓글", value: "932", delta: "+2%" },
   { key: "shares", label: "공유 수", value: "1,120", delta: "+8%" },
   { key: "followers", label: "팔로워", value: "72k", delta: "+1%" },
+];
+
+const monthData = [
+  { year: 2025, month: 8 },
+  { year: 2025, month: 9 },
+  { year: 2025, month: 12 },
 ];
 
 type AnalyticsSectionProps = {
@@ -51,19 +59,27 @@ export function AnalyticsSection({ metrics }: AnalyticsSectionProps) {
     <section className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-12 lg:py-16">
       <ChannelTabs tabs={tabs} defaultTab={tabs[0]?.id} onTabChange={setActiveTab} />
       <CustomTabContent value="overview" activeTab={activeTab}>
-        <div></div>
+        <MonthSelector
+        months={monthData}
+      />
       </CustomTabContent>
 
       <CustomTabContent value="youtube" activeTab={activeTab}>
-        <div></div>
+        <MonthSelector
+        months={monthData}
+      />
       </CustomTabContent>
 
       <CustomTabContent value="instagram" activeTab={activeTab}>
-        <div></div>
+        <MonthSelector
+        months={monthData}
+      />
       </CustomTabContent>
 
       <CustomTabContent value="tiktok" activeTab={activeTab}>
-        <div></div>
+        <MonthSelector
+        months={monthData}
+      />
       </CustomTabContent>
     </section>
   );
