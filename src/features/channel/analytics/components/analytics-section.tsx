@@ -5,7 +5,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { ChannelTabs, CustomTabContent, type TabItem } from "./channel-tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MonthSelector } from "./MonthSelector";
-
+import { OverviewItem } from "./OverviewItem";
+import { TableSet } from "./TableSet";
 
 type Metric = {
   key: string;
@@ -28,6 +29,20 @@ const monthData = [
   { year: 2025, month: 12 },
 ];
 
+const columns = [
+  "도달 수",
+  "노출 수",
+  "조회 수",
+  "좋아요 수",
+  "댓글 수",
+  "저장 수",
+  "공유 수",
+  "전체 참여 수",
+  "참여율",
+];
+
+const rows = [[85420, 85420, 85420, 85420, 85420, 85420, 85420, 85420, "7.2%"]];
+
 type AnalyticsSectionProps = {
   metrics?: Metric[];
 };
@@ -46,7 +61,7 @@ export function AnalyticsSection({ metrics }: AnalyticsSectionProps) {
       { id: "instagram", label: tabTranslations("instagram") },
       { id: "tiktok", label: tabTranslations("tiktok") },
     ],
-    [tabTranslations],
+    [tabTranslations]
   );
 
   const [activeTab, setActiveTab] = useState(tabs[0]?.id ?? "overview");
@@ -59,27 +74,23 @@ export function AnalyticsSection({ metrics }: AnalyticsSectionProps) {
     <section className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-12 lg:py-16">
       <ChannelTabs tabs={tabs} defaultTab={tabs[0]?.id} onTabChange={setActiveTab} />
       <CustomTabContent value="overview" activeTab={activeTab}>
-        <MonthSelector
-        months={monthData}
-      />
+        <MonthSelector months={monthData} />
+        <OverviewItem title="연동 계정 정보" value="@positio_manager" />
       </CustomTabContent>
 
       <CustomTabContent value="youtube" activeTab={activeTab}>
-        <MonthSelector
-        months={monthData}
-      />
+        <MonthSelector months={monthData} />
+        <div className="p-10">
+          <TableSet columns={columns} rows={rows} />
+        </div>
       </CustomTabContent>
 
       <CustomTabContent value="instagram" activeTab={activeTab}>
-        <MonthSelector
-        months={monthData}
-      />
+        <MonthSelector months={monthData} />
       </CustomTabContent>
 
       <CustomTabContent value="tiktok" activeTab={activeTab}>
-        <MonthSelector
-        months={monthData}
-      />
+        <MonthSelector months={monthData} />
       </CustomTabContent>
     </section>
   );
