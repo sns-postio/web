@@ -5,11 +5,11 @@ import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import type { PlatformMeta } from "./channel-data";
-import type { UserConnection } from "@/features/channel-management/api/types";
+import type { PlatformMeta } from "./integration-data";
+import type { UserConnection } from "@/features/integration/api/types";
 import { PlaySquare } from "lucide-react";
 
-type ChannelCardProps = {
+type IntegrationCardProps = {
   connection?: UserConnection;
   meta?: PlatformMeta;
   locale: string;
@@ -17,7 +17,13 @@ type ChannelCardProps = {
   connectLoading?: boolean;
 };
 
-export function ChannelCard({ connection, meta, locale, onConnect, connectLoading }: ChannelCardProps) {
+export function IntegrationCard({
+  connection,
+  meta,
+  locale,
+  onConnect,
+  connectLoading,
+}: IntegrationCardProps) {
   const t = useTranslations("channelManagement");
   const commonT = useTranslations("common");
   const isConnected = Boolean(connection);

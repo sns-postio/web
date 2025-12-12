@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { useTranslations } from "next-intl";
-import { useUserConnections } from "@/features/channel-management/hooks/useUserConnections";
+import { useUserConnections } from "@/features/integration/hooks/useUserConnections";
 import { InstagramStatusCard } from "@/features/instagram/components/instagram-status-card";
 import { InstagramPostsCard } from "@/features/instagram/components/instagram-posts-card";
 import { InstagramDisconnectCard } from "@/features/instagram/components/instagram-disconnect-card";

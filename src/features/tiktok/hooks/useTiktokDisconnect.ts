@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 import { toast } from "@/hooks/use-toast";
 import { disconnectTiktok } from "@/features/tiktok/api/tiktokApi";
-import { USER_CONNECTIONS_QUERY_KEY } from "@/features/channel-management/hooks/useUserConnections";
+import { USER_CONNECTIONS_QUERY_KEY } from "@/features/integration/hooks/useUserConnections";
 
 export function useTiktokDisconnect() {
   const t = useTranslations("tiktok.messages");

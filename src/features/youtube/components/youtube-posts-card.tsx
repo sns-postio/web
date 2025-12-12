@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Loader2, RefreshCw } from "lucide-react";
-import type { UserConnection } from "@/features/channel-management/api/types";
+import type { UserConnection } from "@/features/integration/api/types";
 import { useYoutubePosts } from "../hooks/useYoutubePosts";
 
 interface YoutubePostsCardProps {

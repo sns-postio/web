@@ -2,14 +2,14 @@
 
 import { useMemo } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ChannelCard } from "./channel-card";
-import { PLATFORM_META, SUPPORTED_PLATFORMS } from "./channel-data";
+import { IntegrationCard } from "./integration-card";
+import { PLATFORM_META, SUPPORTED_PLATFORMS } from "./integration-data";
 import { useUserConnections } from "../hooks/useUserConnections";
 import { useYoutubeConnect } from "@/features/youtube/hooks/useYoutubeConnect";
 import { useInstagramConnect } from "@/features/instagram/hooks/useInstagramConnect";
 import { useTiktokConnect } from "@/features/tiktok/hooks/useTiktokConnect";
 
-export function ChannelManagementSection() {
+export function IntegrationSection() {
   const t = useTranslations("channelManagement");
   const commonT = useTranslations("common");
   const locale = useLocale();
@@ -19,7 +19,9 @@ export function ChannelManagementSection() {
   const { mutate: startTiktokConnect, isPending: isTiktokConnecting } = useTiktokConnect();
 
   const mappedConnections = useMemo(() => {
-    const connectionMap = new Map(connections.map((connection) => [connection.platform, connection]));
+    const connectionMap = new Map(
+      connections.map((connection) => [connection.platform, connection])
+    );
     return SUPPORTED_PLATFORMS.map((platform) => ({
       platform,
       connection: connectionMap.get(platform),
@@ -52,13 +54,13 @@ export function ChannelManagementSection() {
             platform === "YOUTUBE"
               ? isYoutubeConnecting
               : platform === "INSTAGRAM"
-                ? isInstagramConnecting
-                : platform === "TIKTOK"
-                  ? isTiktokConnecting
-                  : false;
+              ? isInstagramConnecting
+              : platform === "TIKTOK"
+              ? isTiktokConnecting
+              : false;
 
           return (
-            <ChannelCard
+            <IntegrationCard
               key={platform}
               connection={connection}
               meta={meta}

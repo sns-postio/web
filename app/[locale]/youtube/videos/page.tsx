@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2, UploadCloud } from "lucide-react";
-import { useUserConnections } from "@/features/channel-management/hooks/useUserConnections";
+import { useUserConnections } from "@/features/integration/hooks/useUserConnections";
 import { useYoutubeVideoPost } from "@/features/youtube/hooks/useYoutubeVideoPost";
 
 export default function YoutubeVideoPostPage() {

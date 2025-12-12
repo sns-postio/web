@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import { useLocale } from "next-intl";
 import { useYoutubeConnect } from "@/features/youtube/hooks/useYoutubeConnect";
-import { useUserConnections } from "@/features/channel-management/hooks/useUserConnections";
+import { useUserConnections } from "@/features/integration/hooks/useUserConnections";
 import { YoutubeStatusCard } from "@/features/youtube/components/youtube-status-card";
 import { YoutubePostsCard } from "@/features/youtube/components/youtube-posts-card";
 import { YoutubeDisconnectCard } from "@/features/youtube/components/youtube-disconnect-card";

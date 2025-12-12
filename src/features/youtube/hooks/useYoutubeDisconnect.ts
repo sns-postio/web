@@ -2,7 +2,7 @@
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { disconnectYoutube } from "../api/youtubeApi";
-import { USER_CONNECTIONS_QUERY_KEY } from "@/features/channel-management/hooks/useUserConnections";
+import { USER_CONNECTIONS_QUERY_KEY } from "@/features/integration/hooks/useUserConnections";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
 
