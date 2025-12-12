@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Users, Zap } from "lucide-react";
 import Link from "next/link";
-import { Header } from "@/components/layout/header";
+
 import { Footer } from "@/components/layout/footer";
+import GNB from "@/components/layout/GNB";
 
 
 export default function HomePage() {
@@ -14,7 +15,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-background">
-      <Header />
+      <GNB />
       <section id="service" className="container mx-auto space-y-8 px-4 py-16 text-center">
         <h1 className="text-balance text-4xl font-bold md:text-6xl">
           {t("heroTitle")}

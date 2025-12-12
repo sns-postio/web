@@ -48,6 +48,17 @@
       "dispute": "Dispute Resolution"
     }
   },
+  "gnb": {
+    "serviceIntro": "Product",
+    "channelManagement": "Channel Management",
+    "analysis": "Analytics",
+    "publish": "Publish",
+    "integration": "Integration",
+    "mypage": "My Page",
+    "login": "Sign In",
+    "logout": "Sign Out",
+    "loggingOut": "Signing out..."
+  },
   "auth": {
     "login": {
       "title": "Sign In",

@@ -48,6 +48,17 @@
       "dispute": "분쟁해결기준"
     }
   },
+  "gnb": {
+    "serviceIntro": "서비스 소개",
+    "channelManagement": "채널별 관리",
+    "analysis": "분석",
+    "publish": "통합 발행",
+    "integration": "연동 관리",
+    "mypage": "마이페이지",
+    "login": "로그인",
+    "logout": "로그아웃",
+    "loggingOut": "로그아웃 중..."
+  },
   "auth": {
     "login": {
       "title": "로그인",
