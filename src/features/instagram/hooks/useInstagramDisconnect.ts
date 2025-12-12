@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { disconnectInstagram } from "@/features/instagram/api/instagramApi";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
-import { USER_CONNECTIONS_QUERY_KEY } from "@/features/integration/hooks/useUserConnections";
+import { USER_CONNECTIONS_QUERY_KEY } from "@/features/channel/integration/hooks/useUserConnections";
 
 export function useInstagramDisconnect() {
   const queryClient = useQueryClient();

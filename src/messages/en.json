@@ -556,6 +556,20 @@
       "week": "Week",
       "month": "Month",
       "year": "Year"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "youtube": "YouTube",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "tiktok": "TikTok"
+    },
+    "section": {
+      "title": "Overview",
+      "metricDescription": "Last 7 days",
+      "ctaTitle": "Detailed reports",
+      "ctaDescription": "See channel-level insights with more dimensions.",
+      "ctaPlaceholder": "A detailed chart or table component will be added here."
     }
   },
   "post": {

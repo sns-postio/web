@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { useTranslations } from "next-intl";
-import { useUserConnections } from "@/features/integration/hooks/useUserConnections";
+import { useUserConnections } from "@/features/channel/integration/hooks/useUserConnections";
 import { useTiktokConnect } from "@/features/tiktok/hooks/useTiktokConnect";
 import { TiktokStatusCard } from "./tiktok-status-card";
 import { TiktokDisconnectCard } from "./tiktok-disconnect-card";

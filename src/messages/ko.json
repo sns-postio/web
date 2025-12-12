@@ -556,6 +556,20 @@
       "week": "주간",
       "month": "월간",
       "year": "연간"
+    },
+    "tabs": {
+      "overview": "통합 분석",
+      "youtube": "Youtube",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "tiktok": "Tiktok"
+    },
+    "section": {
+      "title": "통합 분석",
+      "metricDescription": "최근 7일",
+      "ctaTitle": "상세 리포트",
+      "ctaDescription": "채널별 상세 데이터를 확인할 수 있습니다.",
+      "ctaPlaceholder": "그래프 또는 상세 통계 컴포넌트가 추가될 예정입니다."
     }
   },
   "post": {

@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import type { PlatformMeta } from "./integration-data";
-import type { UserConnection } from "@/features/integration/api/types";
+import type { UserConnection } from "@/features/channel/integration/api/types";
 import { PlaySquare } from "lucide-react";
 
 type IntegrationCardProps = {

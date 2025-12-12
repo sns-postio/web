@@ -133,8 +133,8 @@ const MobileNav = ({ locale, isLoggedIn, loginHref, onLogout, isLoggingOut }: Mo
               );
             })}
           </nav>
-          <Separator className="my-6" />
-          <div className="px-2 pb-2 sm:px-4">
+          <Separator />
+          <div className="px-2 py-2 sm:px-4">
             <Button className="w-full rounded-lg px-6" onClick={onLogout} disabled={isLoggingOut}>
               {isLoggingOut ? gnbTranslations("loggingOut") : gnbTranslations("logout")}
             </Button>

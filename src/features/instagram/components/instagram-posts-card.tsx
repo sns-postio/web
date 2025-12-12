@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Loader2, RefreshCw } from "lucide-react";
-import type { UserConnection } from "@/features/integration/api/types";
+import type { UserConnection } from "@/features/channel/integration/api/types";
 import { useInstagramPosts } from "../hooks/useInstagramPosts";
 
 interface InstagramPostsCardProps {
