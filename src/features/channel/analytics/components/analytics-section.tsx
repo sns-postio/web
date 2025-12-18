@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { MonthSelector, MonthSelectorContent } from "./MonthSelector";
 import { OverviewItem } from "./OverviewItem";
 import { TableSet } from "./TableSet";
-import { AnalyticsCard } from "./AnalyticsCard";
+import { PostioCard } from "../../../../components/PostioCard";
 import { GoLinkButton } from "./GoLinkButton";
 import { NoConnectionError, NoDataError, TemporaryError } from "./ErrorState";
 import { AlertEmptyState } from "./AlertEmptyState";
@@ -124,14 +124,14 @@ function MonthSelectorBlock({ children }: { children?: React.ReactNode }) {
 
 function SharedAccountInfoCard() {
   return (
-    <AnalyticsCard title="연동 계정 정보">
+    <PostioCard title="연동 계정 정보">
       <div className="flex flex-row gap-4">
         <OverviewItem title="연동 계정 정보" value="@positio_manager" />
         <OverviewItem title="연동일" value="2025.10.01" />
         <OverviewItem title="마지막 업데이트" value="2025.11.26 12:20" />
         <OverviewItem title="계정 페이지" value={<GoLinkButton href="" label="바로가기" />} />
       </div>
-    </AnalyticsCard>
+    </PostioCard>
   );
 }
 
@@ -145,9 +145,9 @@ function PerformanceTableCard({
   rowsData?: (string | number)[][];
 }) {
   return (
-    <AnalyticsCard title={title}>
+    <PostioCard title={title}>
       <TableSet columns={columnsData} rows={rowsData} />
-    </AnalyticsCard>
+    </PostioCard>
   );
 }
 
@@ -156,16 +156,16 @@ function OverviewTab() {
     <div className="flex flex-col gap-6">
       <MonthSelectorBlock />
       <AlertEmptyState />
-      <AnalyticsCard title="전체 성과 분석">
+      <PostioCard title="전체 성과 분석">
         <div className="flex flex-row gap-4">
           <PerformanceOverviewCard label="게시물 수" value="85,420" change={12.5} />
           <PerformanceOverviewCard label="총 도달 수" value="0" change={-20} />
-          <PerformanceOverviewCard label="총 노출 수"/>
+          <PerformanceOverviewCard label="총 노출 수" />
           <PerformanceOverviewCard label="총 참여 수" value="134,393" change={-20} />
           <PerformanceOverviewCard label="평균 참여율" value="7.2%" change={12.5} />
         </div>
-      </AnalyticsCard>
-      <AnalyticsCard title="시간대 별 참여율 비교" />
+      </PostioCard>
+      <PostioCard title="시간대 별 참여율 비교" />
     </div>
   );
 }
@@ -206,9 +206,9 @@ function InstagramTab() {
       <MonthSelectorBlock />
       <SharedAccountInfoCard />
       <PerformanceTableCard />
-      <AnalyticsCard title="팔로워 분석" />
-      <AnalyticsCard title="시간대 별 참여율 비교" />
-      <AnalyticsCard title="콘텐츠 반응도" />
+      <PostioCard title="팔로워 분석" />
+      <PostioCard title="시간대 별 참여율 비교" />
+      <PostioCard title="콘텐츠 반응도" />
       <PerformanceTableCard columnsData={hashtagColumns} rowsData={hashtagRows} />
     </div>
   );
@@ -220,9 +220,9 @@ function TiktokTab() {
       <MonthSelectorBlock />
       <SharedAccountInfoCard />
       <PerformanceTableCard />
-      <AnalyticsCard title="팔로워 분석" />
-      <AnalyticsCard title="시간대 별 참여율 비교" />
-      <AnalyticsCard title="콘텐츠 반응도" />
+      <PostioCard title="팔로워 분석" />
+      <PostioCard title="시간대 별 참여율 비교" />
+      <PostioCard title="콘텐츠 반응도" />
     </div>
   );
 }

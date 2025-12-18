@@ -53,7 +53,11 @@ const buildPrimaryNavigation = (t: (key: string) => string): PrimaryNavItem[] =>
   },
   {
     label: t("mypage"),
-    items: [{ label: t("mypage"), href: "/mypage" }],
+    items: [
+      { label: t("payment"), href: "/mypage/payment" },
+      { label: t("accountSettings"), href: "/mypage/account" },
+      { label: t("support"), href: "/support" },
+    ],
   },
 ];
 

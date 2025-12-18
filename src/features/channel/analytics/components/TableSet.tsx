@@ -21,9 +21,11 @@ export function TableSet({ columns, rows, className }: TableSetProps) {
     >
       <TableHeader columns={columns} />
 
-      {rows.map((row, index) => (
-        <TableContent key={index} data={row} />
-      ))}
+      <div className="divide-y divide-border">
+        {rows.map((row, index) => (
+          <TableContent key={index} data={row} />
+        ))}
+      </div>
     </div>
   );
 }

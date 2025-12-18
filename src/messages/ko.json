@@ -55,6 +55,9 @@
     "publish": "통합 발행",
     "integration": "연동 관리",
     "mypage": "마이페이지",
+    "payment": "결제",
+    "accountSettings": "계정 설정",
+    "support": "문의/설정",
     "login": "로그인",
     "logout": "로그아웃",
     "loggingOut": "로그아웃 중..."
@@ -158,6 +161,51 @@
       "confirmPlaceholder": "비밀번호를 다시 입력하세요",
       "mismatch": "비밀번호가 일치하지 않습니다",
       "match": "비밀번호가 일치합니다"
+    }
+  },
+  "mypage": {
+    "payment": {
+      "title": "결제 관리",
+      "description": "구독 플랜 및 결제 정보를 관리하세요",
+      "currentPlanLabel": "현재 이용 중인 플랜",
+      "plans": {
+        "basic": {
+          "name": "Basic",
+          "price": "무료"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "월 29,000원"
+        }
+      },
+      "labels": {
+        "startDate": "구독 시작일",
+        "nextPaymentDate": "다음 결제일",
+        "paymentMethod": "결제 수단"
+      },
+      "states": {
+        "freeNextBilling": "무료 플랜 이용 중입니다",
+        "noPaymentMethod": "등록된 결제 수단이 없습니다"
+      },
+      "actions": {
+        "changePlan": "플랜 변경",
+        "editMethod": "수정",
+        "invoice": "청구서",
+        "receipt": "영수증",
+        "loadMore": "더 불러오기"
+      },
+      "history": {
+        "title": "결제 이력",
+        "empty": "결제 이력이 없습니다",
+        "description": "{planName} 플랜 - 월간 구독 정기 결제",
+        "columns": {
+          "date": "결제일",
+          "description": "결제 내역",
+          "method": "결제 수단",
+          "amount": "금액",
+          "download": "다운로드"
+        }
+      }
     }
   },
   "channelManagement": {

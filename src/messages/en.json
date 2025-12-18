@@ -55,6 +55,9 @@
     "publish": "Publish",
     "integration": "Integration",
     "mypage": "My Page",
+    "payment": "Billing",
+    "accountSettings": "Account Settings",
+    "support": "Support",
     "login": "Sign In",
     "logout": "Sign Out",
     "loggingOut": "Signing out..."
@@ -158,6 +161,51 @@
       "confirmPlaceholder": "Re-enter your password",
       "mismatch": "Passwords do not match",
       "match": "Passwords match"
+    }
+  },
+  "mypage": {
+    "payment": {
+      "title": "Billing",
+      "description": "Manage your subscription plan and billing details.",
+      "currentPlanLabel": "Current plan",
+      "plans": {
+        "basic": {
+          "name": "Basic",
+          "price": "Free"
+        },
+        "pro": {
+          "name": "Pro",
+          "price": "₩29,000 / month"
+        }
+      },
+      "labels": {
+        "startDate": "Subscription start",
+        "nextPaymentDate": "Next payment date",
+        "paymentMethod": "Payment method"
+      },
+      "states": {
+        "freeNextBilling": "You are using the free plan.",
+        "noPaymentMethod": "No payment method on file."
+      },
+      "actions": {
+        "changePlan": "Change plan",
+        "editMethod": "Update",
+        "invoice": "Invoice",
+        "receipt": "Receipt",
+        "loadMore": "Load more"
+      },
+      "history": {
+        "title": "Payment history",
+        "empty": "No payment history yet",
+        "description": "{planName} plan — monthly subscription renewal",
+        "columns": {
+          "date": "Date",
+          "description": "Description",
+          "method": "Method",
+          "amount": "Amount",
+          "download": "Download"
+        }
+      }
     }
   },
   "channelManagement": {

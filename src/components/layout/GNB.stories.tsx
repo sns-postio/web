@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { GNBBaseComponent } from './GNB';
 
 const meta = {
-  title: 'Layout/GNB',
+  title: 'common/Layout/GNB',
   component: GNBBaseComponent,
   parameters: {
     layout: 'fullscreen',

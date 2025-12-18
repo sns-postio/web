@@ -5,7 +5,7 @@ interface CardProps {
   children?: React.ReactNode;
 }
 
-export function AnalyticsCard({ title, children}: CardProps) {
+export function PostioCard({ title, children}: CardProps) {
   return (
     <div className="w-full flex flex-col gap-4 rounded-2xl border border-border bg-white p-6">
       {title && (
